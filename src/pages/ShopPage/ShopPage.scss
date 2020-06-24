@@ -1,11 +1,14 @@
+// Shop page styles
+@import '../../styles/config.scss';
+
 .shoppage {
   .collection-preview {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.875rem;
+    margin-bottom: 1.75rem;
   
     .title {
-      font-size: 1.75rem;
+      font-size: $title-font;
       margin-bottom: 1.5rem;
     }
   
@@ -44,7 +47,7 @@
       height: 90%;
       background-size: cover;
       background-position: center;
-      margin-bottom: 0.3125rem;
+      margin-bottom: 0.5rem;
     }
   
     .collection-footer {
@@ -52,15 +55,14 @@
       height: 5%;
       display: flex;
       justify-content: space-between;
-      font-size: 1.125rem;
+      font-size: $medium-font;
   
       .name {
-        width: 90%;
-        margin-bottom: 0.9375rem;
+        width: 85%;
       }
   
       .price {
-        width: 10%;
+        width: 15%;
       }
     }
 
@@ -70,7 +72,7 @@
       position: absolute;
       top: 14rem;
       display: none;
-      font-size: 0.75rem;
+      font-size: $smaller-font;
       padding: 0;
     }
 

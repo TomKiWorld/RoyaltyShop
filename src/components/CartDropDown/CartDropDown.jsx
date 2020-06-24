@@ -1,11 +1,29 @@
 import React from 'react';
-import CtaButton from '../CtaButton/CtaButton';
+import { connect } from 'react-redux';
 
-const CartDropDown = () => (
-  <div className='cart-dropdown'>
-    <div className='cart-items' />
-    <CtaButton>Got to Checkout</CtaButton>
+import CtaButton from '../CtaButton/CtaButton';
+import CartItem from '../CartItem/CartItem';
+
+const CartDropDown = ({ cartItems }) => (
+  <div className={`${!cartItems.length ? 'empty ' : ''}cart-dropdown`}>
+    <div className='cart-items'>
+      {
+        cartItems.length
+        ? cartItems.map(cartItem => 
+          <CartItem key={cartItem.id} item={cartItem} />)
+        : <span>There are no items in your cart</span>
+      }
+    </div>
+    {
+      cartItems.length
+      ? <CtaButton>Got to Checkout</CtaButton>
+      : null
+    }    
   </div>
 );
 
-export default CartDropDown;
+const mapStateToProps = ({cart: { cartItems }}) => ({
+  cartItems
+})
+
+export default connect(mapStateToProps)(CartDropDown);

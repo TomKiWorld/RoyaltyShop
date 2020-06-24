@@ -1,13 +1,5 @@
-$base-color: white;
-$sub-color: grey;
-$main-color: black;
-$google-blue: #4285F4;
-
-@mixin shrinkLabel {
-  top: -0.875rem;
-  font-size: 0.75rem;
-  color: $main-color;
-}
+// Login page styles
+@import '../../styles/config.scss';
 
 .login {
   display: flex;
@@ -15,25 +7,25 @@ $google-blue: #4285F4;
   flex-direction: column;
 
   .title {
-    margin: 0.625rem 0;
+    margin: 1rem 0;
   }
 
   .group {
     position: relative;
-    margin: 2.8125rem 0;
+    margin: 2.5rem 0;
   
     .form-input {
       background: none;
       background-color: $base-color;
       color: $sub-color;
-      font-size: 1.125rem;
-      padding: 0.625rem 0.625rem 0.625rem 0.3125rem;
+      font-size: $medium-font;
+      padding: 0.5rem 0.5rem 0.5rem 0.25rem;
       display: block;
       width: 100%;
       border: none;
       border-radius: 0;
       border-bottom: 0.07rem solid $sub-color;
-      margin: 1.5625rem 0;
+      margin: 1.5rem 0;
   
       &:focus {
         outline: none;
@@ -45,17 +37,17 @@ $google-blue: #4285F4;
     }
   
     input[type='password'] {
-      letter-spacing: 0.3em;
+      letter-spacing: 0.3rem;
     }
   
     .form-input-label {
       color: $sub-color;
-      font-size: 1rem;
+      font-size: $normal-font;
       font-weight: normal;
       position: absolute;
       pointer-events: none;
-      left: 0.3125rem;
-      top: 0.625rem;
+      left: 0.25rem;
+      top: 0.5rem;
       transition: 300ms ease all;
   
       &.shrink {
@@ -84,7 +76,7 @@ $google-blue: #4285F4;
 
     .cta-button:nth-of-type(2) {
       background-color: $google-blue;
-      border: 0.0625rem solid $google-blue;
+      border: 0.05rem solid $google-blue;
 
       &:hover,
       &:focus {

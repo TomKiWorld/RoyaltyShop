@@ -1,6 +1,6 @@
-$base-color: white;
-$sub-color: grey;
-$main-color: black;
+// Main App styles
+@import './styles//config.scss';
+@import './styles/cart.scss';
 
 .container {
   width: 90%;
@@ -13,13 +13,13 @@ $main-color: black;
   letter-spacing: 0.03125rem;
   line-height: 3.125rem;
   padding: 0 2rem 0 2rem;
-  font-size: 0.9rem;
+  font-size: $small-font;
   background-color: $main-color;
   color: $base-color;
   text-transform: uppercase;
   font-family: 'Open Sans Condensed';
   font-weight: bolder;
-  border: 0.0625rem solid $main-color;
+  border: $border-style;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -43,55 +43,7 @@ $main-color: black;
 }
 
 .error {
-  color: #FF0404;
-}
-
-.cart-icon {
-  width: 2.8rem;
-  height: 2.8rem;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  .shopping-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  .item-count {
-    position: absolute;
-    font-size: 0.625rem;
-    font-weight: bold;
-    bottom: 0.75rem;
-  }
-}
-
-.cart-dropdown {
-  position: absolute;
-  width: 15rem;
-  height: 21.25rem;
-  display: flex;
-  flex-direction: column;
-  padding: 1.25rem;
-  border: 0.0625rem solid black;
-  background-color: white;
-  top: 5.625rem;
-  right: 2.5rem;
-  z-index: 5;
-
-  .cart-items {
-    height: 15rem;
-    display: flex;
-    flex-direction: column;
-    overflow: scroll;
-  }
-
-  .cta-button {
-    margin-top: auto;
-    text-transform: uppercase;
-  }
+  color: $error-color;
 }
 
 .site-header {
@@ -115,7 +67,7 @@ $main-color: black;
 
     .nav-option {
       text-transform: uppercase;
-      padding: 0.625rem 1rem;
+      padding: 0.5rem 1rem;
       cursor: pointer;
       transition: transform 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 
