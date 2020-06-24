@@ -12,8 +12,8 @@ $main-color: black;
   height: 3.125rem;
   letter-spacing: 0.03125rem;
   line-height: 3.125rem;
-  padding: 0 2.1875rem 0 2.1875rem;
-  font-size: 0.9375rem;
+  padding: 0 2rem 0 2rem;
+  font-size: 0.9rem;
   background-color: $main-color;
   color: $base-color;
   text-transform: uppercase;
@@ -21,10 +21,24 @@ $main-color: black;
   font-weight: bolder;
   border: 0.0625rem solid $main-color;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $base-color;
     color: $main-color;
+  }
+
+  &.inverted {
+    background-color: $base-color;
+    color: $main-color;
+
+    &:hover,
+    &:focus {
+      background-color: $main-color;
+      color: $base-color;
+    }
   }
 }
 
@@ -112,4 +126,9 @@ $main-color: black;
       }
     }
   }
+}
+
+.site-footer {
+  display: flex;
+  justify-content: center;
 }

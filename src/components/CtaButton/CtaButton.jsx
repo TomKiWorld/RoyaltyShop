@@ -1,8 +1,8 @@
 import React from 'react';
 
-const CtaButton = ({ children, ...otherProps }) => (
+const CtaButton = ({ children, inverted, ...otherProps }) => (
   <button
-    className='cta-button'
+    className={`${inverted ? 'inverted ': '' }cta-button`}
     {...otherProps}>
     { children}
   </button>

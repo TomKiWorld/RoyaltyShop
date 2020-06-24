@@ -6,6 +6,8 @@ import Header from './components/Header/Header';
 import HomePage from './pages/HomePage/HomePage';
 import ShopPage from './pages/ShopPage/ShopPage';
 import LoginPage from './pages/LoginPage/LoginPage';
+import Footer from './components/Footer/Footer';
+
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 
@@ -42,12 +44,15 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
+          {/* For GH pages */}
+          <Route exact path='/RoyaltyShop' component={HomePage} /> 
           <Route exact path='/shop' component={ShopPage} />
           <Route exact path='/signin' 
             render={()=> this.props.currentUser ? 
               <Redirect to='/' /> : 
               <LoginPage />}/>
         </Switch>
+        <Footer />
       </React.Fragment>    
     );
   }
