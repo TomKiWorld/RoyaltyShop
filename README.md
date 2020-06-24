@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# RoyaltyShop
+![alt text](https://github.com/TomKiWorld/RoyaltyShop/blob/master/src/assets/royalty-logo.svg?raw=true)
+
+## Usage
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Demo webshop
+- This App connects to firebase to manage users.
 
 ## Available Scripts
 
@@ -16,6 +22,9 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `yarn cover`
+To check test coverage
 
 ### `yarn build`
 
