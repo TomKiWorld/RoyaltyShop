@@ -4,7 +4,7 @@ import Directory from '../../components/Directory/Directory';
 import './HomePage.scss';
 
 const HomePage = () => (
-  <section className='homepage container'>
+  <section className='home-page container'>
     <Directory />
   </section>
 );

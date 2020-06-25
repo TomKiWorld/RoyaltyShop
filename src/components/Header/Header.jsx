@@ -1,9 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
 import LinkedLogo from '../LinkedLogo/LinkedLogo';
 import Navigation from '../Navigation/Navigation';
 import CartIcon from '../CartIcon/CartIcon';
 import CartDropDown from '../CartDropDown/CartDropDown';
+
+import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
 const Header = ({ hidden }) => {
   return (
@@ -18,8 +22,8 @@ const Header = ({ hidden }) => {
   );
 }
 
-const mapStateToProps = ({cart: { hidden }}) => ({
-  hidden
+const mapStateToProps = createStructuredSelector({
+  hidden: selectCartHidden
 })
 
 export default connect(mapStateToProps)(Header);

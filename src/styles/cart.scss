@@ -1,4 +1,5 @@
 // Cart styles
+@import './config.scss';
 .cart-icon {
   width: 2.8rem;
   height: 2.8rem;
@@ -29,13 +30,14 @@
   flex-direction: column;
   padding: 1.25rem;
   border: $border-style;
-  background-color: white;
+  background-color: $base-color;
   top: 5rem;
   right: 2.5rem;
   z-index: 5;
 
   &.empty {
     height: 4rem;
+    text-align: center;
   }
 
   .cart-items {

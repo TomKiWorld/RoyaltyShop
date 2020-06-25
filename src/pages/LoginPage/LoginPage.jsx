@@ -8,7 +8,7 @@ import './LoginPage.scss';
 class LoginPage extends React.Component {
   render() {
     return (
-      <section className='login container'>
+      <section className='login-page container'>
         <SignIn />
         <Register />
       </section>
