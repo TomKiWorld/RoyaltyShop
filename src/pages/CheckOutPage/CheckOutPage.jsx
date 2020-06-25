@@ -35,7 +35,7 @@ const CheckOutPage = ({ cartItems, cartTotal }) => (
       }
     </main>
     <footer className='total'>
-      <span>Total: ${cartTotal}</span>
+      <span>Total: €{cartTotal}</span>
     </footer>
   </section>
 );

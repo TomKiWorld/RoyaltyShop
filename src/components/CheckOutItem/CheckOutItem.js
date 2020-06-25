@@ -20,7 +20,7 @@ const CheckOutItem = ({cartItem, addItem, removeItem, clearITeam}) => {
         className='arrow'
         onClick={()=> addItem(cartItem)}>&#10095;</span>
     </span>
-    <span className='price'>${price}</span>
+    <span className='price'>€{price}</span>
     <div 
       onClick={(() => clearITeam(cartItem))}
       className='remove-button'>&#10005;</div>
