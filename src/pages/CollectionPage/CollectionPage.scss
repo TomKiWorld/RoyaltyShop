@@ -1,0 +1,19 @@
+.collection-page {
+  display: flex;
+  flex-direction: column;
+
+  .collection-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+
+    & .collection-item {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: 48rem) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}
