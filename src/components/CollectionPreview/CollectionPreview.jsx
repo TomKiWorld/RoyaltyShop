@@ -1,10 +1,17 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import CollectionItem from '../CollectionItem/CollectionItem';
 
-const CollectionPreview = ({title, items, history, match }) => (
+import CollectionItem from '../CollectionItem/CollectionItem';
+import { ReactComponent as Underline } from '../../assets/underline.svg';
+
+const CollectionPreview = ({title, items, history, match, routeName }) => (
   <section className='collection-preview'>
-    <h2 className='title'>{title}</h2>
+    <h2 
+      className='title'
+      role='link'
+      onClick={() => history.push(`${match.url}/${routeName}`)}>{title}
+      <span>See more</span></h2>
+      <Underline className='title-underline'/>
     <section className='preview'>
       {items
         .filter((item, idx) => idx < 4)

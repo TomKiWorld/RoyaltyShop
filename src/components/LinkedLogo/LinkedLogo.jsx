@@ -4,7 +4,7 @@ import { ReactComponent as Logo } from '../../assets/royalty-logo.svg';
 
 const LinkedLogo = () => {
   return (
-    <Link className='logo-container' to='/'>
+    <Link className='logo-container' to='/' aria-label='Home page' >
       <Logo className='logo' />
     </Link>
   );

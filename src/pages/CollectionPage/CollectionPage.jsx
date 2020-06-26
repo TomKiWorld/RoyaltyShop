@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { selectCollection } from '../../redux/shop/shop.selectors';
 import CollectionItem from '../../components/CollectionItem/CollectionItem';
+import { ReactComponent as Underline } from '../../assets/underline.svg';
 
 import './CollectionPage.scss';
 
@@ -10,7 +11,8 @@ const CollectionPage = ({collection}) => {
   const { title, items } = collection;
   return (
   <section className='collection-page'>
-    <h1 className='collection-title'>Royalty {title}</h1>    
+    <h1 className='collection-title'>Royalty {title}</h1>
+    <Underline className='title-underline'/>
     <div className='collection-items'>
       {
         items.map(item => (

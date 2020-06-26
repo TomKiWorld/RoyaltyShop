@@ -59,20 +59,20 @@
   }
 
   .content {
-    height: 5.5rem;
-    padding: 0 1.56rem;
+    height: 6rem;
+    padding: 0 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border: $border-style;
     background-color: $base-color;
-    opacity: 0.7;
+    opacity: 0.9;
     position: absolute;
 
     .title {
       font-weight: bold;
-      margin: 0 0 0.5rem;
+      margin: 0;
       font-size: $title-font;
       color: #4a4a4a;
     }
@@ -80,6 +80,10 @@
     .subtitle {
       font-weight: lighter;
       font-size: $normal-font;
+    }
+
+    @media screen and (min-width: 31rem) {
+      opacity: 0.7;
     }
   }
 

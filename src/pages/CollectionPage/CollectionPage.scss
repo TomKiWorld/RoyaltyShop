@@ -5,11 +5,12 @@
   .collection-items {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+    grid-gap: 1rem;
+    margin-top: 1rem;
 
     & .collection-item {
       width: 100%;
-      margin-bottom: 30px;
+      margin-bottom: 1.5rem;
     }
 
     @media screen and (min-width: 48rem) {

@@ -20,10 +20,13 @@ const CartDropDown = ({ cartItems, history, dispatch }) => (
     </div>
     {
       cartItems.length
-      ? <CtaButton onClick={() => {
-        history.push('/checkout');
-        dispatch(toggleCartHidden());
-        }}>Got to Checkout</CtaButton>
+      ? <CtaButton 
+          role='link'
+          onClick={() => {
+            history.push('/checkout');
+            dispatch(toggleCartHidden());
+          }}
+        >Got to Checkout</CtaButton>
       : null
     }    
   </div>

@@ -4,10 +4,12 @@ import { createStructuredSelector } from 'reselect';
 
 import { selectCollectionsForPreview } from '../../redux/shop/shop.selectors';
 import CollectionPreview from '../CollectionPreview/CollectionPreview';
+import { ReactComponent as Underline } from '../../assets/underline.svg';
 
 const CollectionsOverview = ({ collections }) => (
   <section className='collections-overview'>
     <h1 className='collection-title'>Royalty Collections</h1>
+    <Underline className='title-underline'/>
     {
       collections.map(({ id, ...otherCollectionProps }) => (
         <CollectionPreview 
