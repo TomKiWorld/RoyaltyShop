@@ -11,8 +11,8 @@ const CollectionPage = ({collection}) => {
   const { title, items } = collection;
   return (
   <section className='collection-page'>
-    <h1 className='collection-title'>Royalty {title}</h1>
-    <Underline className='title-underline'/>
+    <h1 className='page-title'>Royalty {title}</h1>
+    <Underline className='page-title-underline'/>
     <div className='collection-items'>
       {
         items.map(item => (

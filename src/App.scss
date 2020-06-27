@@ -46,6 +46,14 @@
   color: $error-color;
 }
 
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  background-color: $base-color;
+}
+
 .site-header {
   height: 3rem;
   display: flex;
@@ -86,4 +94,14 @@
 .site-footer {
   display: flex;
   justify-content: center;
+}
+
+.page-title {
+  @include sectionTitle();
+}
+
+.page-title-underline {
+  width: 15rem;
+  height: 5rem;
+  margin: -3rem auto -1rem;
 }

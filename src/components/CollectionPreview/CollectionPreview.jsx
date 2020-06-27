@@ -7,9 +7,9 @@ import { ReactComponent as Underline } from '../../assets/underline.svg';
 const CollectionPreview = ({title, items, history, match, routeName }) => (
   <section className='collection-preview'>
     <h2 
-      className='title'
+      className='collection-title'
       role='link'
-      onClick={() => history.push(`${match.url}/${routeName}`)}>{title}
+      onClick={() => history.push(`${match.path}/${routeName}`)}>{title}
       <span>See more</span></h2>
       <Underline className='title-underline'/>
     <section className='preview'>

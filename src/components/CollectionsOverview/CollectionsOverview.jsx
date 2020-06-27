@@ -8,8 +8,8 @@ import { ReactComponent as Underline } from '../../assets/underline.svg';
 
 const CollectionsOverview = ({ collections }) => (
   <section className='collections-overview'>
-    <h1 className='collection-title'>Royalty Collections</h1>
-    <Underline className='title-underline'/>
+    <h1 className='page-title'>Royalty Collections</h1>
+    <Underline className='page-title-underline'/>
     {
       collections.map(({ id, ...otherCollectionProps }) => (
         <CollectionPreview 

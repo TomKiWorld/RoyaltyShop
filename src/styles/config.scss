@@ -21,3 +21,8 @@ $border-style: 0.05rem solid $main-color;
   font-size: $smaller-font;
   color: $main-color;
 }
+
+@mixin sectionTitle {
+  font-size: 2rem;
+  text-align: center;
+}

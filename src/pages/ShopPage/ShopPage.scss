@@ -7,18 +7,12 @@
     flex-direction: column;
   }
 
-  .title-underline {
-    width: 15rem;
-    height: 5rem;
-    margin: -3rem auto -1rem;
-  }
-
   .collection-preview {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1rem;
   
-    .title {
+    .collection-title {
       color: $sub-color;
       width: 10rem;
       text-align: center;
@@ -61,8 +55,7 @@
   }
 
   .collection-title {
-    font-size: 2rem;
-    text-align: center;
+    @include sectionTitle();
   }
 
   .collection-item {
@@ -73,6 +66,7 @@
     align-items: center;
     overflow: hidden;
     position: relative;
+    margin-bottom: 1rem;
 
     &:hover,
     &:focus {
@@ -132,6 +126,7 @@
 
     @media screen and (min-width: 48rem) {
       width: 22%;
+      margin-bottom: 0;
     }
   }
 }

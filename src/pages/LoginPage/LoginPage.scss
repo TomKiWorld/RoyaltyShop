@@ -3,8 +3,22 @@
 
 .login-page {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+
+  .login-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    @media screen and (min-width: 48rem) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+
+  .page-title-underline {
+    margin: -2.5rem auto -1rem;
+  }
 
   .title {
     margin: 1rem 0;
@@ -87,9 +101,6 @@
   }
 
   @media screen and (min-width: 48rem) {
-    flex-direction: row;
-    justify-content: space-around;
-
     .sign-in, 
     .register {
       margin: unset

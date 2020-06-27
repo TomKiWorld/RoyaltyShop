@@ -11,8 +11,8 @@ import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
 const Header = ({ hidden }) => {
   return (
-    <header className='container'>
-      <div className='site-header'>
+    <header className='main-nav'>
+      <div className='site-header container'>
         <LinkedLogo />
         <Navigation />
         <CartIcon />
