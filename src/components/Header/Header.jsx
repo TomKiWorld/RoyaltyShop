@@ -9,7 +9,7 @@ import CartDropDown from '../CartDropDown/CartDropDown';
 
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
-const Header = ({ hidden }) => {
+const Header = ({ hideCart }) => {
   return (
     <header className='main-nav'>
       <div className='site-header container'>
@@ -17,13 +17,13 @@ const Header = ({ hidden }) => {
         <Navigation />
         <CartIcon />
       </div>
-      { hidden ? null : <CartDropDown /> }
+      { hideCart ? null : <CartDropDown /> }
     </header>
   );
 }
 
 const mapStateToProps = createStructuredSelector({
-  hidden: selectCartHidden
+  hideCart: selectCartHidden
 })
 
 export default connect(mapStateToProps)(Header);

@@ -1,6 +1,9 @@
 // Main App styles
 @import './styles//config.scss';
 @import './styles/cart.scss';
+@import './styles/navigation.scss';
+@import './styles/header.scss';
+@import './styles/footer.scss';
 
 .container {
   width: 90%;
@@ -42,58 +45,8 @@
   }
 }
 
-.error {
+.warning-message {
   color: $error-color;
-}
-
-.main-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 5;
-  background-color: $base-color;
-}
-
-.site-header {
-  height: 3rem;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-
-  .logo-container {
-    height: 100%;
-
-    @media screen and (min-width: 26rem) {
-      padding-left: 1.5rem;      
-    }
-  }
-
-  .nav {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-grow: 2;
-
-    .nav-option {
-      text-transform: uppercase;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      transition: transform 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-        transform: scale(1.1);
-      }
-    }
-  }
-}
-
-.site-footer {
-  display: flex;
-  justify-content: center;
 }
 
 .page-title {
