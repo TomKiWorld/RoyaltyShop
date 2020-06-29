@@ -3,7 +3,8 @@
 ## Usage
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 - Demo webshop
-- The App uses firebase to manage users.
+- Uses [Firebase](https://firebase.google.com/) to manage users.
+- Uses [Stripe](https://stripe.com/) for payment processing 
 
 ## Available Scripts
 

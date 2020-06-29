@@ -26,3 +26,19 @@ $border-style: 0.05rem solid $main-color;
   font-size: 2rem;
   text-align: center;
 }
+
+@mixin flexColCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin dropDown {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  border: $border-style;
+  background-color: $base-color;
+  z-index: 5;
+}

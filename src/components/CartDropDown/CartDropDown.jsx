@@ -9,26 +9,31 @@ import { selectCartItems } from '../../redux/cart/cart.selectors';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 
 const CartDropDown = ({ cartItems, history, dispatch }) => (
-  <div className={`${!cartItems.length ? 'empty ' : ''}cart-dropdown`}>
-    <div className='cart-items'>
+  <div className='cart-container'>
+    <div className={`${!cartItems.length ? 'empty ' : ''}cart-body`}>
+      <span 
+        className='cart-close'
+        onClick={()=> dispatch(toggleCartHidden())}>&#10005;</span>
+      <div className='cart-items'>
+        {
+          cartItems.length
+          ? cartItems.map(cartItem => 
+            <CartItem key={cartItem.id} item={cartItem} />)
+          : <span>There are no items in your cart</span>
+        }
+      </div>
       {
         cartItems.length
-        ? cartItems.map(cartItem => 
-          <CartItem key={cartItem.id} item={cartItem} />)
-        : <span>There are no items in your cart</span>
-      }
+        ? <CtaButton 
+            role='link'
+            onClick={() => {
+              history.push('/checkout');
+              dispatch(toggleCartHidden());
+            }}
+          >Got to Checkout</CtaButton>
+        : null
+      }    
     </div>
-    {
-      cartItems.length
-      ? <CtaButton 
-          role='link'
-          onClick={() => {
-            history.push('/checkout');
-            dispatch(toggleCartHidden());
-          }}
-        >Got to Checkout</CtaButton>
-      : null
-    }    
   </div>
 );
 
