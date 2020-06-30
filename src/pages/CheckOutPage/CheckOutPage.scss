@@ -91,6 +91,33 @@
       
       .arrow {
         cursor: pointer;
+        position: relative;
+
+        &:hover {
+          &:after {
+            position: absolute;
+            top: 0.3rem;
+            font-size: 0.5rem;
+            font-weight: bold;
+            letter-spacing: 0.1rem;
+            background-color: rgba(128, 128, 128, 0.5);
+            padding: 0.2rem 0.5rem;
+          }
+
+          &:first-of-type {
+            &:after {
+              content: 'Reduce';
+              left: -2.5rem;
+            }
+          }
+
+          &:last-of-type {
+            &:after {
+              content: 'Add';
+              left: 0.5rem;
+            }
+          }
+        }
       }
 
       .value {
