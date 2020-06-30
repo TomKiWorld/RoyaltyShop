@@ -5,7 +5,7 @@ import { createStructuredSelector } from 'reselect';
 
 import { selectDirectorySections } from '../../redux/directory/directory.selectors';
 
-const ShopLinks = ({ sections, dispatch, header }) => (
+const ShopLinks = ({ sections }) => (
   <React.Fragment>
     <Link 
       className='nav-title nav-option' 
