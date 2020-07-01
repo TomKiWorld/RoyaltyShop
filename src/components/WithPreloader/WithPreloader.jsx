@@ -1,11 +1,10 @@
 import React from 'react';
+import Preloader from '../Preloader/Preloader';
 
 const WithPreloader = WrappedComponent => ({ isLoading, ...otherProps }) => {
   return isLoading ? 
   (
-    <div className='preloader-overlay'>
-      <div className='preloader-container' />
-    </div>
+    <Preloader />
   ) : (
   <WrappedComponent { ...otherProps }/>
   )

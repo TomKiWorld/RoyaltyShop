@@ -17,11 +17,10 @@
       justify-content: space-around;
 
       @media screen and (min-width: 31rem) {
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
 
       .nav-title  {
-        font-size: 1.4rem;
         font-weight: bold;
       }
 
@@ -40,6 +39,11 @@
 
       &:last-of-type {
         border-right: 0;
+      }
+
+      .logo-container {
+        transform: none;
+        padding-left: 1rem;
       }
     }
   }
