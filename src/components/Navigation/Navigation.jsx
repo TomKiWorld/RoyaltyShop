@@ -81,7 +81,9 @@ const Navigation = ({ currentUser, toggleShopNav }) => {
           >
             Shop
             <div className='dropdown-links'>
-              <ShopLinks />
+              <ShopLinks 
+                handleLeave={handleLeave}
+              />
             </div>
           </li>
           <li className='nav-option'>
@@ -99,7 +101,9 @@ const Navigation = ({ currentUser, toggleShopNav }) => {
             >
               <ProfileIcon className='profile-icon' />              
               <div className='dropdown-links'>
-                <ProfileLinks />
+                <ProfileLinks 
+                  handleLeave={handleLeave}
+                />
               </div>
             </li>
             :
@@ -117,6 +121,6 @@ const Navigation = ({ currentUser, toggleShopNav }) => {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
-})
+});
 
 export default connect(mapStateToProps)(Navigation);

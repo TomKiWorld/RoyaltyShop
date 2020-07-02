@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import FormInput from '../../components/FormInput/FormInput';
 import CtaButton from '../../components/CtaButton/CtaButton';
-import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
+
+import { signUpStart } from '../../redux/user/user.actions'
 
 class Register extends React.Component {
   constructor() {
@@ -28,6 +30,8 @@ class Register extends React.Component {
       confirmPassword
     } = this.state;
 
+    const { signUpStart } = this.props;
+
     if (!displayName) {
       this.setState({ displayNameErr: 'Please enter your display name to continue' });
       return;
@@ -43,23 +47,13 @@ class Register extends React.Component {
       return;
     }
 
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword(email, password);
+    this.setState({
+      displayNameErr: '',
+      emailErr: '',
+      passwordErr: ''
+    });
+    signUpStart({ displayName, email, password });
 
-      await createUserProfileDocument(user, { displayName });
-
-      this.setState({
-        displayName: '',
-        displayNameErr: '',
-        email: '',
-        emailErr: '',
-        password: '',
-        confirmPassword: '',
-        passwordErr: ''
-      });
-    } catch (error) {
-      console.log(error)
-    }
   }
 
   handleChange = e => {
@@ -124,4 +118,8 @@ class Register extends React.Component {
   }
 }
 
-export default Register;
+const mapDispatchToProps = dispatch => ({
+  signUpStart: userCredentials => dispatch(signUpStart(userCredentials))
+})
+
+export default connect(null, mapDispatchToProps)(Register);
