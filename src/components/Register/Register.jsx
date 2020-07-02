@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import FormInput from '../../components/FormInput/FormInput';
 import CtaButton from '../../components/CtaButton/CtaButton';
 
-import { signUpStart } from '../../redux/user/user.actions'
+import { signUpStart } from '../../redux/user/user.actions';
 
 class Register extends React.Component {
   constructor() {
@@ -120,6 +120,6 @@ class Register extends React.Component {
 
 const mapDispatchToProps = dispatch => ({
   signUpStart: userCredentials => dispatch(signUpStart(userCredentials))
-})
+});
 
 export default connect(null, mapDispatchToProps)(Register);

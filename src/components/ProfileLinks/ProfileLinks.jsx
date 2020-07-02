@@ -40,6 +40,6 @@ const ProfileLinks = ({ signOutStart }) => {
 
 const mapStateToProps = dispatch => ({
   signOutStart: () => dispatch(signOutStart())
-})
+});
 
 export default connect(null, mapStateToProps)(ProfileLinks);
