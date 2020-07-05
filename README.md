@@ -1,14 +1,19 @@
-# ![alt text](https://github.com/TomKiWorld/RoyaltyShop/blob/master/src/assets/royalty-logo.svg?raw=true) RoyaltyShop ![alt text](https://github.com/TomKiWorld/RoyaltyShop/blob/master/src/assets/royalty-logo.svg?raw=true)
+# ![alt text](https://github.com/TomKiWorld/RoyaltyShop/blob/master/client/src/assets/royalty-logo.svg?raw=true) RoyaltyShop ![alt text](https://github.com/TomKiWorld/RoyaltyShop/blob/master/client/src/assets/royalty-logo.svg?raw=true)
 
 ## Usage
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 - Demo webshop
-- Uses [Firebase](https://firebase.google.com/) to manage users.
-- Uses [Stripe](https://stripe.com/) for payment processing 
+- Express server.
+- Firebase](https://firebase.google.com/) to manage users.
+- [Stripe](https://stripe.com/) for payment processing 
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `yarn dev`
+
+Runs both server and app locally with nodemon active.
 
 ### `yarn start`
 
