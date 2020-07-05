@@ -11,7 +11,7 @@
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn dev`
 
 Runs both server and app locally with nodemon active.
 
