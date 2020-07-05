@@ -11,8 +11,8 @@
   "homepage": "https://tomkiworld.github.io/RoyaltyShop/",
   "proxy": "http://localhost:5000",
   "scripts": {
-    "start": "cp ../.env .env && react-scripts start",
-    "build": "cp ../.env .env && react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
