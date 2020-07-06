@@ -20,7 +20,7 @@
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "start": "node server.js",
     "predeploy": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-    "deploy": "gh-pages -d client/build",
+    "deploy": "gh-pages -d server.js",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "dependencies": {
