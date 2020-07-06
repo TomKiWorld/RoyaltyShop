@@ -13,14 +13,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-if(process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
-}
 
-app.listen(port, error => {
-  if( error ) throw error;
-  console.log(`Server running on port ${port}`);
-});
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+}
 
 app.post('/payment', (req, res) => {
   const { token, amount } = req.body
@@ -41,4 +40,9 @@ app.post('/payment', (req, res) => {
   } else {
     res.status(500).json({error: 'Could not complete the transaction - Missing information'})
   }
+});
+
+app.listen(port, error => {
+  if( error ) throw error;
+  console.log(`Server running on port ${port}`);
 });
