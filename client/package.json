@@ -4,11 +4,6 @@
   "author": "TomKiWorld",
   "description": "E-commerse shop",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/TomKiWorld/RoyaltyShop"
-  },
-  "homepage": "https://tomkiworld.github.io/RoyaltyShop/",
   "proxy": "http://localhost:5000",
   "scripts": {
     "start": "react-scripts start",
