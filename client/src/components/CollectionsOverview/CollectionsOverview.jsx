@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { selectCollectionsForPreview } from '../../redux/shop/shop.selectors';
+
+import PageTitle from '../PageTitle/PageTitle';
 import CollectionPreview from '../CollectionPreview/CollectionPreview';
-import { ReactComponent as Underline } from '../../assets/underline.svg';
 
 const CollectionsOverview = ({ collections }) => (
   <section className='collections-overview'>
-    <h1 className='page-title'>Royalty Collections</h1>
-    <Underline className='page-title-underline'/>
+    <PageTitle title={'Royalty Collections'} />
     {
       collections.map(({ id, ...otherCollectionProps }) => (
         <CollectionPreview 
