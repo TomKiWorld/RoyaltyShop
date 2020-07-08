@@ -4,6 +4,7 @@
   width: 100%;
   z-index: 5;
   background-color: $base-color;
+  box-shadow: 0 1rem 6rem rgba(128, 128, 128, 0.1), 0 1rem 1rem rgba(128, 128, 128, 0.15), 0 0.3rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 .site-header {
