@@ -8,4 +8,4 @@ const CtaButton = ({ children, inverted, ...otherProps }) => (
   </button>
 )
 
-export default CtaButton;
+export default React.memo(CtaButton);

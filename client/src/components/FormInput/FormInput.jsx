@@ -27,4 +27,4 @@ const FormInput = ({ label, error, handleChange, ...otherProps}) => {
   );
 }
 
-export default FormInput;
+export default React.memo(FormInput);

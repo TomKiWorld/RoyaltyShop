@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-
-import CollectionsOverviewContainer from '../../components/CollectionsOverview/CollectionsOverviewContainer';
-import CollectionPageContainer from '../CollectionPage/CollectionPageContainer';
+import SuspenseLoad from '../../components/SuspenseLoad/SuspenseLoad';
 
 import './ShopPage.scss';
 import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 
+const CollectionsOverviewContainer = lazy(() => import('../../components/CollectionsOverview/CollectionsOverviewContainer'));
+const CollectionPageContainer = lazy(() => import('../CollectionPage/CollectionPageContainer'));
 
 class ShopPage extends React.Component {
 
@@ -20,14 +20,16 @@ class ShopPage extends React.Component {
 
     return (
       <section className='shop-page container'>
-        <Route 
-          exact 
-          path={`${match.path}`} 
-          component={CollectionsOverviewContainer} />
-        <Route 
-          exact 
-          path={`${match.path}/:collectionId`} 
-          component={CollectionPageContainer} />
+        <SuspenseLoad>
+          <Route 
+            exact 
+            path={`${match.path}`} 
+            component={CollectionsOverviewContainer} />
+          <Route 
+            exact 
+            path={`${match.path}/:collectionId`} 
+            component={CollectionPageContainer} />
+        </SuspenseLoad>
       </section>
     );
   }

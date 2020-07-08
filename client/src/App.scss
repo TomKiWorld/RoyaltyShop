@@ -57,5 +57,17 @@
 .page-title-underline {
   width: 15rem;
   height: 5rem;
-  margin: -3rem auto -1rem;
+  margin: -3rem auto 1rem;
+}
+
+.short-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .main-image {
+    width: 100%;
+    height: auto;
+  }
 }
