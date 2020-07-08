@@ -4,17 +4,15 @@ import { createStructuredSelector } from 'reselect';
 
 import { selectCartItems, selectCartTotal } from '../../redux/cart/cart.selectors';
 
+import PageTitle from '../../components/PageTitle/PageTitle';
 import CheckOutItem from '../../components/CheckOutItem/CheckOutItem';
-
 import StripeCheckoutButton from '../../components/StripeCheckoutButton/StripeCheckoutButton';
-import { ReactComponent as Underline } from '../../assets/underline.svg';
 
 import './CheckOutPage.scss'
 
 const CheckOutPage = ({ cartItems, cartTotal }) => (
   <section className='checkout-page container'>
-    <h2 className='page-title'>Checkout</h2>
-    <Underline className='page-title-underline'/>
+    <PageTitle title={'Checkout'} />
     <header className='checkout-header'>
       <div className='header-block'>
         <span>Product</span>
