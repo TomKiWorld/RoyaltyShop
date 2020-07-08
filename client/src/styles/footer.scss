@@ -1,13 +1,11 @@
 .site-footer {
-  color: $base-color;
-  background-color: rgba(128, 128, 128, 0.6);
+  background-color: rgba(128, 128, 128, 0.3);
   padding: 1rem;
 
   @include flexColCenter();
 
   .tomki-link {
     font-weight: bold;
-    color: $base-color;
   }
 
   .footer {
@@ -26,7 +24,6 @@
 
       .nav-option {
         text-transform: capitalize;
-        color: $base-color;
         width: fit-content;
       }
     } 
