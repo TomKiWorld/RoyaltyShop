@@ -24,15 +24,15 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get('/service-worker.js', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build', 'service-worker.js'));
+  res.sendFile(path.join(__dirname, 'client/build', 'service-worker.js'));
 });
 
 app.get('/favicon.ico', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build', 'favicon.ico'));
+  res.sendFile(path.join(__dirname, 'client/build', 'favicon.ico'));
 });
 
 app.get('/manifest.json', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build', 'manifest.json'));
+  res.sendFile(path.join(__dirname, 'client/build', 'manifest.json'));
 });
 
 app.post('/payment', (req, res) => {
