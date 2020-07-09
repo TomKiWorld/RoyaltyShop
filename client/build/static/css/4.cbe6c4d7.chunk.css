@@ -1,0 +1,2 @@
+.collection-page{display:flex;flex-direction:column}.collection-page .collection-items{display:grid;grid-template-columns:1fr 1fr;grid-gap:1rem;margin-top:1rem}.collection-page .collection-items .collection-item{width:100%;margin-bottom:1.5rem}@media screen and (min-width:48rem){.collection-page .collection-items{grid-template-columns:1fr 1fr 1fr 1fr}}
+/*# sourceMappingURL=4.cbe6c4d7.chunk.css.map */

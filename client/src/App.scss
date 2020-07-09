@@ -1,0 +1,73 @@
+// Main App styles
+@import './styles//config.scss';
+@import './styles/cart.scss';
+@import './styles/navigation.scss';
+@import './styles/header.scss';
+@import './styles/footer.scss';
+@import './styles/preloader.scss';
+
+.container {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.cta-button {
+  width: auto;
+  height: 3.125rem;
+  letter-spacing: 0.03125rem;
+  line-height: 3.125rem;
+  padding: 0 2rem 0 2rem;
+  font-size: $small-font;
+  background-color: $main-color;
+  color: $base-color;
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed';
+  font-weight: bolder;
+  border: $border-style;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+
+  &:hover,
+  &:focus {
+    background-color: $base-color;
+    color: $main-color;
+  }
+
+  &.inverted {
+    background-color: $base-color;
+    color: $main-color;
+
+    &:hover,
+    &:focus {
+      background-color: $main-color;
+      color: $base-color;
+    }
+  }
+}
+
+.warning-message {
+  color: $error-color;
+}
+
+.page-title {
+  @include sectionTitle();
+}
+
+.page-title-underline {
+  width: 15rem;
+  height: 5rem;
+  margin: -3rem auto 1rem;
+}
+
+.short-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .main-image {
+    width: 100%;
+    height: auto;
+  }
+}
