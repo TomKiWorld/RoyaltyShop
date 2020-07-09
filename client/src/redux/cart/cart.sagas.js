@@ -34,6 +34,7 @@ export function* onUserSignIn() {
   yield takeLatest(UserActionTypes.SIGN_IN_SUCCESS, checkCartFromFirebase);
 }
 
+export function* onCartChange() {
   yield takeLatest(
     [
       CartActionTypes.ADD_ITEM,
