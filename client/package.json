@@ -6,7 +6,10 @@
   "license": "ISC",
   "proxy": "http://localhost:5000",
   "homepage": "https://tomkiworld.github.io/RoyaltyShop/",
-  "scripts": {
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TomKiWorld/RoyaltyShop/client"
+  },  "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
