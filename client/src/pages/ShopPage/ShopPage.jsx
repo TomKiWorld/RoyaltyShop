@@ -1,38 +1,39 @@
-import React, { lazy } from 'react';
+import React, { lazy, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+
 import SuspenseLoad from '../../components/SuspenseLoad/SuspenseLoad';
 
-import './ShopPage.scss';
 import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
+
+import './ShopPage.scss';
 
 const CollectionsOverviewContainer = lazy(() => import('../../components/CollectionsOverview/CollectionsOverviewContainer'));
 const CollectionPageContainer = lazy(() => import('../CollectionPage/CollectionPageContainer'));
 
-class ShopPage extends React.Component {
+const ShopPage = ({ fetchCollectionsStart, match }) => {
+  useEffect(() => {
+    fetchCollectionsStart();
+  }, [fetchCollectionsStart]);
 
-  componentDidMount() {
-    this.props.fetchCollectionsStart();
-  }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  render() {
-    const { match } = this.props;
-
-    return (
-      <section className='shop-page container'>
-        <SuspenseLoad>
-          <Route 
-            exact 
-            path={`${match.path}`} 
-            component={CollectionsOverviewContainer} />
-          <Route 
-            exact 
-            path={`${match.path}/:collectionId`} 
-            component={CollectionPageContainer} />
-        </SuspenseLoad>
-      </section>
-    );
-  }
+  return (
+    <section className='shop-page'>
+      <SuspenseLoad>
+        <Route 
+          exact 
+          path={`${match.path}`} 
+          component={CollectionsOverviewContainer} />
+        <Route 
+          exact 
+          path={`${match.path}/:collectionId`} 
+          component={CollectionPageContainer} />
+      </SuspenseLoad>
+    </section>
+  );
 }
 
 const mapDispatchToProps = dispatch => ({

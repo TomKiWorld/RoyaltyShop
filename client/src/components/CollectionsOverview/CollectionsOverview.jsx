@@ -4,20 +4,32 @@ import { createStructuredSelector } from 'reselect';
 
 import { selectCollectionsForPreview } from '../../redux/shop/shop.selectors';
 
-import PageTitle from '../PageTitle/PageTitle';
+
+import HeaderBanner from '../HeaderBanner/HeaderBanner';
+import TwoImagesTitleBlock from '../TwoImagesTitleBlock/TwoImagesTitleBlock';
 import CollectionPreview from '../CollectionPreview/CollectionPreview';
 
 const CollectionsOverview = ({ collections }) => (
-  <section className='collections-overview'>
-    <PageTitle title={'Royalty Collections'} />
-    {
-      collections.map(({ id, ...otherCollectionProps }) => (
-        <CollectionPreview 
-          key={id} 
-          { ...otherCollectionProps }/>
-      ))
-    }
-  </section>
+  <React.Fragment>
+    <HeaderBanner 
+      imageUrl={`https://images.unsplash.com/photo-1594339944668-083133c6a48a?w=1200&q=10`}>
+      <TwoImagesTitleBlock 
+        title={`Royalty Collections`}
+        subtitle={new Date().getFullYear()}
+        imageOne={`https://i.ibb.co/7CQVJNm/blue-tank.png`}
+        imageTwo={`https://i.ibb.co/RvwnBL8/pink-shirt.png`}
+      />
+    </HeaderBanner>
+    <section className='collections-overview container'>
+      {
+        collections.map(({ id, ...otherCollectionProps }) => (
+          <CollectionPreview 
+            key={id} 
+            { ...otherCollectionProps }/>
+        ))
+      }
+    </section>
+  </React.Fragment>
 );
 
 const mapStateToProps = createStructuredSelector({

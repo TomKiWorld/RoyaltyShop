@@ -5,7 +5,7 @@ import CollectionItem from '../CollectionItem/CollectionItem';
 import { ReactComponent as Underline } from '../../assets/underline.svg';
 
 const CollectionPreview = ({title, items, history, match, routeName }) => (
-  <section className='collection-preview'>
+  <section className='collection-preview container'>
     <h2 
       className='collection-title'
       role='link'
