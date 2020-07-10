@@ -1,0 +1,41 @@
+@import '../../styles/config.scss';
+
+.expending-title {
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  text-align: center;
+  color: $base-color;
+  text-shadow: 0.1rem 0.1rem $main-color;
+  z-index: 5;
+  font-size: 1.5rem;
+
+  h2 {
+    letter-spacing: 0;
+    animation: expend 8s infinite;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+
+    @media screen and (min-width: 31rem) {
+      font-size: 3rem;
+    }
+  }
+}
+
+@keyframes expend {
+  0% {
+    letter-spacing: 0.3rem;
+  }
+  20% {
+    letter-spacing: 0.3rem;
+  }
+  40% {
+    letter-spacing: 0.8rem;
+  }
+  60% {
+    letter-spacing: 0.8rem;
+  }
+  100% {
+    letter-spacing: 0.3rem;
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { ReactComponent as Underline } from '../../assets/underline.svg';
 
-const MenuItem = ({ imageUrl, title, size, history, linkUrl, match }) => (
+const MenuItem = ({ imageUrl, title, size, history, linkUrl }) => (
   <div 
     role='link'
     className={`${ size ? size : '' } menu-item`}
