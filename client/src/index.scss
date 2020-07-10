@@ -1,0 +1,29 @@
+// Default styles
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  padding-top: 5rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  transition: transform 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    transform: scale(1.1);
+  }
+}
+
+input {
+  border-radius: 0;
+}
