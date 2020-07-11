@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4a98dc5bb6945ed176255a70398a5fd4",
+    "revision": "b85d5da97b976ab6a91075f0f14e93b1",
     "url": "/RoyaltyShop/index.html"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/RoyaltyShop/static/css/6.cf8f5e3e.chunk.css"
   },
   {
-    "revision": "1a21cddcb43a03b97e5c",
+    "revision": "410d36869f2a57cd24f8",
     "url": "/RoyaltyShop/static/css/7.1203d6a3.chunk.css"
   },
   {
@@ -64,8 +64,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/RoyaltyShop/static/js/6.f2d8637e.chunk.js"
   },
   {
-    "revision": "1a21cddcb43a03b97e5c",
-    "url": "/RoyaltyShop/static/js/7.98ece198.chunk.js"
+    "revision": "410d36869f2a57cd24f8",
+    "url": "/RoyaltyShop/static/js/7.3a1312b1.chunk.js"
   },
   {
     "revision": "edcb967659226d497d0e",
@@ -80,8 +80,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/RoyaltyShop/static/js/main.e23c14cf.chunk.js"
   },
   {
-    "revision": "12a363ae4f7640e1e41c",
-    "url": "/RoyaltyShop/static/js/runtime-main.6a61283c.js"
+    "revision": "29d82040e14090ac2c22",
+    "url": "/RoyaltyShop/static/js/runtime-main.6a1b78d4.js"
   },
   {
     "revision": "1d8cdc13515cd235c2220345154096e0",
