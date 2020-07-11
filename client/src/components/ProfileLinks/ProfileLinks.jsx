@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import { signOutStart } from '../../redux/user/user.actions';
 
+const PUBLIC_URL = process.env.PUBLIC_URL;
+
 const closeDropDown = () => {
   const background = document.querySelector('.dropdown-background');
   return background ? setTimeout(() => background.classList.remove('open'), 1000) : null;
@@ -14,18 +16,8 @@ const ProfileLinks = ({ signOutStart }) => {
     <React.Fragment>
       <Link
         className='nav-title nav-option'
-        to='/profile'>
+        to={`${PUBLIC_URL}/profile`}>
           Profile
-      </Link>
-      <Link 
-        className='nav-option'
-        to='/profile/order-history'>
-          Order History
-      </Link>
-      <Link 
-        className='nav-option'
-        to='/profile/wish-list'>
-          Wish list
       </Link>
       <div 
         className='nav-option sign-out' 

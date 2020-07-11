@@ -5,11 +5,13 @@ import { createStructuredSelector } from 'reselect';
 
 import { selectDirectorySections } from '../../redux/directory/directory.selectors';
 
+const PUBLIC_URL = process.env.PUBLIC_URL;
+
 const ShopLinks = ({ sections }) => (
   <React.Fragment>
     <Link 
       className='nav-title nav-option' 
-      to='/shop'>
+      to={`${PUBLIC_URL}/shop`}>
       Collections
     </Link>
     {
@@ -17,7 +19,7 @@ const ShopLinks = ({ sections }) => (
         <Link 
           key={id} 
           className='nav-option' 
-          to={`/${linkUrl}`}>
+          to={`${PUBLIC_URL}/${linkUrl}`}>
             { title }
         </Link>
       ))

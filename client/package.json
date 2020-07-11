@@ -4,12 +4,23 @@
   "author": "TomKiWorld",
   "description": "E-commerse shop",
   "license": "ISC",
+  "homepage": "https://tomkiworld.github.io/RoyaltyShop/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TomKiWorld/RoyaltyShop/client"
+  },
+  "engines": {
+    "node": "13.14.0",
+    "npm": "6.14.4"
+  },
   "proxy": "http://localhost:5000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy": "npm install",
+    "deploy": "gh-pages -d build",
     "cover": "npm test -- --coverage --watchAll"
   },
   "dependencies": {

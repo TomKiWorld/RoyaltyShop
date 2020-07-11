@@ -8,6 +8,8 @@ import { ReactComponent as ProfileIcon }  from '../../assets/profile.svg';
 import ShopLinks from '../ShopLinks/ShopLinks';
 import ProfileLinks from '../ProfileLinks/ProfileLinks';
 
+const PUBLIC_URL = process.env.PUBLIC_URL;
+
 const Navigation = ({ currentUser, toggleShopNav }) => {
   const getClosestTrigger =  (elem, selector) =>  {
     for ( ; elem && elem !== document; elem = elem.parentNode ) {
@@ -87,7 +89,7 @@ const Navigation = ({ currentUser, toggleShopNav }) => {
             </div>
           </li>
           <li className='nav-option'>
-            <Link to='/contact'>
+            <Link to={`${PUBLIC_URL}/contact`}>
               Contact
             </Link>
           </li>        
@@ -108,7 +110,7 @@ const Navigation = ({ currentUser, toggleShopNav }) => {
             </li>
             :
             <li className='nav-option'>
-              <Link to='/signin'>
+              <Link to={`${PUBLIC_URL}/signin`}>
                 Sign In
               </Link>
             </li>

@@ -9,16 +9,18 @@ import LinkedLogo from '../LinkedLogo/LinkedLogo';
 import ShopLinks from '../ShopLinks/ShopLinks';
 import ProfileLinks from '../ProfileLinks/ProfileLinks';
 
+const PUBLIC_URL = process.env.PUBLIC_URL;
+
 const Footer = ({ currentUser }) => {
   return (
     <footer className='site-footer'>
       <div className='footer-nav'>
         <div className='footer-section'>
           <LinkedLogo />
-          <Link className='nav-option' to='/'>
+          <Link className='nav-option' to={PUBLIC_URL}>
             Home
           </Link>
-          <Link className='nav-option' to='/contact'>
+          <Link className='nav-option' to={`${PUBLIC_URL}/contact`}>
             Contact
           </Link>
         </div>
@@ -30,7 +32,7 @@ const Footer = ({ currentUser }) => {
               currentUser ?
               <ProfileLinks currentUser={ currentUser } />
               :
-              <Link className='nav-option' to='/signin'>
+              <Link className='nav-option' to={`${PUBLIC_URL}/signin`}>
                 Sign In
               </Link>
             }
