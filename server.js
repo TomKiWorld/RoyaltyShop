@@ -25,6 +25,11 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
+app.listen(port, error => {
+  if( error ) throw error;
+  console.log(`Server running on port ${port}`);
+});
+
 app.post('/payment', (req, res) => {
   const { token, amount } = req.body
   if (token.id && amount ) {
@@ -44,9 +49,4 @@ app.post('/payment', (req, res) => {
   } else {
     res.status(500).json({error: 'Could not complete the transaction - Missing information'})
   }
-});
-
-app.listen(port, error => {
-  if( error ) throw error;
-  console.log(`Server running on port ${port}`);
 });
