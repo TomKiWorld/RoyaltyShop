@@ -30,6 +30,17 @@ app.listen(port, error => {
   console.log(`Server running on port ${port}`);
 });
 
+app.get(`${process.env.PUBLIC_URL}/service-worker.js`, (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'service-worker.js'));
+});
+
+app.get(`${process.env.PUBLIC_URL}/favicon.ico`, (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'favicon.ico'));
+});
+
+app.get(`${process.env.PUBLIC_URL}/manifest.json`, (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'manifest.json'));
+});
 
 app.post(`${process.env.PUBLIC_URL}/payment`, (req, res) => {
   const { token, amount } = req.body
