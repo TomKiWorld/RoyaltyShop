@@ -16,8 +16,8 @@ const CollectionsOverview = ({ collections }) => (
       <TwoImagesTitleBlock 
         title={`Royalty Collections`}
         subtitle={new Date().getFullYear()}
-        imageOne={`https://i.ibb.co/7CQVJNm/blue-tank.png`}
-        imageTwo={`https://i.ibb.co/RvwnBL8/pink-shirt.png`}
+        imageOne={`https://i.ibb.co/7CQVJNm/blue-tank.jpg`}
+        imageTwo={`https://i.ibb.co/RvwnBL8/pink-shirt.jpg`}
       />
     </HeaderBanner>
     <section className='collections-overview container'>

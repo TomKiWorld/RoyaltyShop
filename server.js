@@ -25,16 +25,9 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.get('/service-worker.js', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'service-worker.js'));
-});
-
-app.get('/favicon.ico', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'favicon.ico'));
-});
-
-app.get('/manifest.json', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'manifest.json'));
+app.listen(port, error => {
+  if( error ) throw error;
+  console.log(`Server running on port ${port}`);
 });
 
 app.post('/payment', (req, res) => {
@@ -56,9 +49,4 @@ app.post('/payment', (req, res) => {
   } else {
     res.status(500).json({error: 'Could not complete the transaction - Missing information'})
   }
-});
-
-app.listen(port, error => {
-  if( error ) throw error;
-  console.log(`Server running on port ${port}`);
 });
