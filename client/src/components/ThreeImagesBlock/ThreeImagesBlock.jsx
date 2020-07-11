@@ -2,7 +2,7 @@ import React from 'react';
 
 const ThreeImagesBlock = ({ images }) => {
   return (
-    <div className='three-images-block'>    
+    <div className='three-images-block container'>    
       {images.map(image => {
         const pathArray = image.split('/');
         const imageNameArray = pathArray[pathArray.length - 1].split('.');

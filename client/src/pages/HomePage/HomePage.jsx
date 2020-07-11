@@ -4,6 +4,9 @@ import HeaderBanner from '../../components/HeaderBanner/HeaderBanner';
 import ThreeImagesBlock from '../../components/ThreeImagesBlock/ThreeImagesBlock';
 import ExpendingTitle from '../../components/ExpendingTitle/ExpendingTitle';
 import Directory from '../../components/Directory/Directory';
+import ImageBanner from '../../components/ImageBanner/ImageBanner';
+import CtaBlock from '../../components/CtaBlock/CtaBlock';
+import BenefitsBanner from '../../components/BenefitsBanner/BenefitsBanner';
 
 import './HomePage.scss';
 
@@ -13,7 +16,7 @@ const images = [
   'https://i.ibb.co/s96FpdP/brown-shearling.jpg'
 ]
 
-const HomePage = () => {
+const HomePage = ({ history }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -28,6 +31,16 @@ const HomePage = () => {
           />
       </HeaderBanner>
       <Directory />
+      <ImageBanner imageUrl={`https://images.unsplash.com/photo-1515120138944-8b31a82f995a?w=1200&q=100`}>
+        <CtaBlock
+          title={`Check our`}
+          subtitle={new Date().getFullYear()}
+          message={`Collection`}
+          btnText={`View collections`}
+          onBtnClick={() => history.push(`/shop`)}
+        />
+      </ImageBanner>
+      <BenefitsBanner />
     </section>
   )
 };
