@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
@@ -8,10 +8,16 @@ import { selectSection } from '../../redux/directory/directory.selectors'
 import HeaderBanner from '../../components/HeaderBanner/HeaderBanner';
 import HeaderTitleBlock from '../../components/HeaderTitleBlock/HeaderTitleBlock';
 import CollectionItem from '../../components/CollectionItem/CollectionItem';
+import BenefitsBanner from '../../components/BenefitsBanner/BenefitsBanner';
+
 
 import './CollectionPage.scss';
 
 const CollectionPage = ({ collection, section, history }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [collection]);
+  
   if (!collection || !section) {
     return <Redirect to='/not-found' />;
   }
@@ -40,6 +46,7 @@ const CollectionPage = ({ collection, section, history }) => {
         ))
       }
     </div>
+    <BenefitsBanner />
   </section>
 )};
 
