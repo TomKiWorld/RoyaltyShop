@@ -20,6 +20,8 @@ const CheckOutPage = lazy(() => import('./pages/CheckOutPage/CheckOutPage'));
 const ComingSoonPage = lazy(() => import('./pages/ComingSoonPage/ComingSoonPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 
+const PUBLIC_URL = process.env.PUBLIC_URL;
+
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
@@ -39,16 +41,14 @@ class App extends React.Component {
           <ErrorBoundry>
             <SuspenseLoad>
               <Switch>
-                <Route exact path='/' component={HomePage} />
-                {/* For GH pages */}
-                <Route exact path='/RoyaltyShop' component={HomePage} /> 
-                <Route path='/shop' component={ShopPage} />
-                <Route exact path='/signin' 
+                <Route exact path={PUBLIC_URL} component={HomePage} />
+                <Route path={`${PUBLIC_URL}/shop`} component={ShopPage} />
+                <Route exact path={`${PUBLIC_URL}/signin`} 
                   render={()=> this.props.currentUser ? 
-                    <Redirect to='/' /> : 
+                    <Redirect to={PUBLIC_URL} /> : 
                     <LoginPage />}/>
-                <Route exact path='/checkout' component={CheckOutPage} />
-                <Route path={['/contact', '/profile']} component={ComingSoonPage} />
+                <Route exact path={`${PUBLIC_URL}/checkout`} component={CheckOutPage} />
+                <Route path={[`${PUBLIC_URL}/contact`, `${PUBLIC_URL}/profile`]} component={ComingSoonPage} />
                 <Route component={NotFoundPage}/>
               </Switch>
             </SuspenseLoad>
