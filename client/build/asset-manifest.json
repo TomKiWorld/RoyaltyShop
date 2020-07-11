@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/RoyaltyShop/static/css/main.b1a6f233.chunk.css",
-    "main.js": "/RoyaltyShop/static/js/main.fce2e566.chunk.js",
-    "main.js.map": "/RoyaltyShop/static/js/main.fce2e566.chunk.js.map",
-    "runtime-main.js": "/RoyaltyShop/static/js/runtime-main.e60d9739.js",
-    "runtime-main.js.map": "/RoyaltyShop/static/js/runtime-main.e60d9739.js.map",
+    "main.js": "/RoyaltyShop/static/js/main.6bca7519.chunk.js",
+    "main.js.map": "/RoyaltyShop/static/js/main.6bca7519.chunk.js.map",
+    "runtime-main.js": "/RoyaltyShop/static/js/runtime-main.09dd2371.js",
+    "runtime-main.js.map": "/RoyaltyShop/static/js/runtime-main.09dd2371.js.map",
     "static/js/2.9f7d2282.chunk.js": "/RoyaltyShop/static/js/2.9f7d2282.chunk.js",
     "static/js/2.9f7d2282.chunk.js.map": "/RoyaltyShop/static/js/2.9f7d2282.chunk.js.map",
     "static/js/3.bd32e1e6.chunk.js": "/RoyaltyShop/static/js/3.bd32e1e6.chunk.js",
@@ -13,11 +13,11 @@
     "static/js/4.f45be4ae.chunk.js": "/RoyaltyShop/static/js/4.f45be4ae.chunk.js",
     "static/js/4.f45be4ae.chunk.js.map": "/RoyaltyShop/static/js/4.f45be4ae.chunk.js.map",
     "static/css/5.9b667f4b.chunk.css": "/RoyaltyShop/static/css/5.9b667f4b.chunk.css",
-    "static/js/5.3a41f4e9.chunk.js": "/RoyaltyShop/static/js/5.3a41f4e9.chunk.js",
-    "static/js/5.3a41f4e9.chunk.js.map": "/RoyaltyShop/static/js/5.3a41f4e9.chunk.js.map",
+    "static/js/5.8df39418.chunk.js": "/RoyaltyShop/static/js/5.8df39418.chunk.js",
+    "static/js/5.8df39418.chunk.js.map": "/RoyaltyShop/static/js/5.8df39418.chunk.js.map",
     "static/css/6.a37983f0.chunk.css": "/RoyaltyShop/static/css/6.a37983f0.chunk.css",
-    "static/js/6.ad13a0b2.chunk.js": "/RoyaltyShop/static/js/6.ad13a0b2.chunk.js",
-    "static/js/6.ad13a0b2.chunk.js.map": "/RoyaltyShop/static/js/6.ad13a0b2.chunk.js.map",
+    "static/js/6.67cf2d1f.chunk.js": "/RoyaltyShop/static/js/6.67cf2d1f.chunk.js",
+    "static/js/6.67cf2d1f.chunk.js.map": "/RoyaltyShop/static/js/6.67cf2d1f.chunk.js.map",
     "static/css/7.2e7909e5.chunk.css": "/RoyaltyShop/static/css/7.2e7909e5.chunk.css",
     "static/js/7.5afd4ddd.chunk.js": "/RoyaltyShop/static/js/7.5afd4ddd.chunk.js",
     "static/js/7.5afd4ddd.chunk.js.map": "/RoyaltyShop/static/js/7.5afd4ddd.chunk.js.map",
@@ -32,7 +32,7 @@
     "static/js/11.5fe4681d.chunk.js": "/RoyaltyShop/static/js/11.5fe4681d.chunk.js",
     "static/js/11.5fe4681d.chunk.js.map": "/RoyaltyShop/static/js/11.5fe4681d.chunk.js.map",
     "index.html": "/RoyaltyShop/index.html",
-    "precache-manifest.8962d239a164f8bc325feb4ec9640f24.js": "/RoyaltyShop/precache-manifest.8962d239a164f8bc325feb4ec9640f24.js",
+    "precache-manifest.163221c8c6b38970eb8c6db5228e2ed4.js": "/RoyaltyShop/precache-manifest.163221c8c6b38970eb8c6db5228e2ed4.js",
     "service-worker.js": "/RoyaltyShop/service-worker.js",
     "static/css/4.f7ee25e5.chunk.css.map": "/RoyaltyShop/static/css/4.f7ee25e5.chunk.css.map",
     "static/css/5.9b667f4b.chunk.css.map": "/RoyaltyShop/static/css/5.9b667f4b.chunk.css.map",
@@ -51,9 +51,9 @@
     "static/media/underline.svg": "/RoyaltyShop/static/media/underline.1ac70712.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e60d9739.js",
+    "static/js/runtime-main.09dd2371.js",
     "static/js/2.9f7d2282.chunk.js",
     "static/css/main.b1a6f233.chunk.css",
-    "static/js/main.fce2e566.chunk.js"
+    "static/js/main.6bca7519.chunk.js"
   ]
 }

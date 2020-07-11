@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "17f9cb671917d5059e9bb0751763b2bb",
+    "revision": "ece6c0c028e0ddf41a25fa21318c665b",
     "url": "/RoyaltyShop/index.html"
   },
   {
@@ -8,11 +8,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/RoyaltyShop/static/css/4.f7ee25e5.chunk.css"
   },
   {
-    "revision": "9287bc86bf45b0b82fe9",
+    "revision": "c68dfbb6f210f836d277",
     "url": "/RoyaltyShop/static/css/5.9b667f4b.chunk.css"
   },
   {
-    "revision": "82df8e18d2c80bb84bad",
+    "revision": "3721216634d6e41436dd",
     "url": "/RoyaltyShop/static/css/6.a37983f0.chunk.css"
   },
   {
@@ -28,7 +28,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/RoyaltyShop/static/css/9.f1701aa3.chunk.css"
   },
   {
-    "revision": "5b43b1fbb15108c891ad",
+    "revision": "36c2a800a9af73851d63",
     "url": "/RoyaltyShop/static/css/main.b1a6f233.chunk.css"
   },
   {
@@ -56,12 +56,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/RoyaltyShop/static/js/4.f45be4ae.chunk.js"
   },
   {
-    "revision": "9287bc86bf45b0b82fe9",
-    "url": "/RoyaltyShop/static/js/5.3a41f4e9.chunk.js"
+    "revision": "c68dfbb6f210f836d277",
+    "url": "/RoyaltyShop/static/js/5.8df39418.chunk.js"
   },
   {
-    "revision": "82df8e18d2c80bb84bad",
-    "url": "/RoyaltyShop/static/js/6.ad13a0b2.chunk.js"
+    "revision": "3721216634d6e41436dd",
+    "url": "/RoyaltyShop/static/js/6.67cf2d1f.chunk.js"
   },
   {
     "revision": "34e80cdcd15eb7ca74d1",
@@ -76,12 +76,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/RoyaltyShop/static/js/9.e2f631a7.chunk.js"
   },
   {
-    "revision": "5b43b1fbb15108c891ad",
-    "url": "/RoyaltyShop/static/js/main.fce2e566.chunk.js"
+    "revision": "36c2a800a9af73851d63",
+    "url": "/RoyaltyShop/static/js/main.6bca7519.chunk.js"
   },
   {
-    "revision": "6462647081e03eacadb1",
-    "url": "/RoyaltyShop/static/js/runtime-main.e60d9739.js"
+    "revision": "14d2248ba9475c7f400c",
+    "url": "/RoyaltyShop/static/js/runtime-main.09dd2371.js"
   },
   {
     "revision": "1d8cdc13515cd235c2220345154096e0",

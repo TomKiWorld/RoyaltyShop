@@ -8,9 +8,9 @@ import Directory from '../../components/Directory/Directory';
 import './HomePage.scss';
 
 const images = [
-  'https://i.ibb.co/QcvzydB/nikes-red.png',
-  'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
-  'https://i.ibb.co/s96FpdP/brown-shearling.png'
+  'https://i.ibb.co/QcvzydB/nikes-red.jpg',
+  'https://i.ibb.co/mh3VM1f/polka-dot-shirt.jpg',
+  'https://i.ibb.co/s96FpdP/brown-shearling.jpg'
 ]
 
 const HomePage = () => {
