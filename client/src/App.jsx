@@ -42,8 +42,6 @@ class App extends React.Component {
             <SuspenseLoad>
               <Switch>
                 <Route exact path={PUBLIC_URL} component={HomePage} />
-                {/* For GH pages */}
-                {/* <Route exact path='/RoyaltyShop' component={HomePage} />  */}
                 <Route path={`${PUBLIC_URL}/shop`} component={ShopPage} />
                 <Route exact path={`${PUBLIC_URL}/signin`} 
                   render={()=> this.props.currentUser ? 
