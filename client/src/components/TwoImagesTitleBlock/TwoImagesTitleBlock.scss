@@ -1,0 +1,96 @@
+@import '../../styles/config.scss';
+
+.two-images-title-block {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  .image-container {
+    width: 30%;
+    height: 100%;
+    position: relative;
+
+    .image-block {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:nth-of-type(1) {
+      .image-block {
+        animation: fromLeft 2s ease-out;
+      }
+    }
+
+    &:nth-of-type(3) {
+      .image-block {
+        animation: fromRight 2s ease-out;
+      }
+    }
+  }
+
+  .title-container {
+    width: 40%;
+    position: relative;
+    font-size: 1.5rem;
+    text-align: center;
+
+    .title-block {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: $gold-color;
+      text-shadow: 0.1rem 0.1rem $main-color;
+      background-color: rgba(128, 128, 128, 0.6);
+      animation: fromTop 1s ease-out;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+
+      @media screen and (min-width: 31rem) {
+        font-size: 3rem;
+      }
+    }
+
+    p {
+      border-bottom: 0.05rem solid $main-color;
+      outline: 0.1rem solid $main-color;
+      outline-offset: 1rem;
+    }
+  }
+}
+
+@keyframes fromLeft {
+  0% {
+    left: -100vw;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes fromRight {
+  0% {
+    right: -100vw;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes fromTop {
+  0% {
+    top: -100vh;
+  }
+  100% {
+    top: 0;
+  }
+}
