@@ -30,7 +30,7 @@ app.listen(port, error => {
   console.log(`Server running on port ${port}`);
 });
 
-app.post('/payment', (req, res) => {
+app.post(`${process.env.PUBLIC_URL}/payment`, (req, res) => {
   const { token, amount } = req.body
   if (token.id && amount ) {
     const body = {

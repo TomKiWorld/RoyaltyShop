@@ -8,6 +8,8 @@ import CartItem from '../CartItem/CartItem';
 import { selectCartItems } from '../../redux/cart/cart.selectors';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 
+const PUBLIC_URL = process.env.PUBLIC_URL;
+
 const CartDropDown = ({ cartItems, history, dispatch }) => (
   <div className='cart-container'>
     <div className={`${!cartItems.length ? 'empty ' : ''}cart-body`}>
@@ -27,7 +29,7 @@ const CartDropDown = ({ cartItems, history, dispatch }) => (
         ? <CtaButton 
             role='link'
             onClick={() => {
-              history.push('/checkout');
+              history.push(`${PUBLIC_URL}/checkout`);
               dispatch(toggleCartHidden());
             }}
           >Got to Checkout</CtaButton>

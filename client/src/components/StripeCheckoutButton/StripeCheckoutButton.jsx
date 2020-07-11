@@ -3,13 +3,15 @@ import axios from 'axios';
 
 import StripeCheckout from 'react-stripe-checkout';
 
+const PUBLIC_URL = process.env.PUBLIC_URL;
+
 const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
   const publishableKey = process.env.REACT_APP_STRIPE_API;
-
+  console.log(PUBLIC_URL)
   const onToken = token => {
     axios({
-      url: '/payment',
+      url: `${PUBLIC_URL}/payment`,
       method: 'post',
       data: {
         amount: priceForStripe,
@@ -40,7 +42,5 @@ const StripeCheckoutButton = ({ price }) => {
     />
   )
 }
-
-export default StripeCheckoutButton;
 
 export default StripeCheckoutButton;
