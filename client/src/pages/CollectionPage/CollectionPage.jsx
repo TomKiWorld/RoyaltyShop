@@ -10,14 +10,13 @@ import HeaderTitleBlock from '../../components/HeaderTitleBlock/HeaderTitleBlock
 import CollectionItem from '../../components/CollectionItem/CollectionItem';
 import BenefitsBanner from '../../components/BenefitsBanner/BenefitsBanner';
 
-
 import './CollectionPage.scss';
 
 const CollectionPage = ({ collection, section, history }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [collection]);
-  
+
   if (!collection || !section) {
     return <Redirect to='/not-found' />;
   }
