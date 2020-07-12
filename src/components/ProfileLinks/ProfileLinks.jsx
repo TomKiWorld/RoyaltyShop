@@ -16,8 +16,8 @@ const ProfileLinks = ({ signOutStart }) => {
     <React.Fragment>
       <Link
         className='nav-title nav-option'
-        to={`${PUBLIC_URL}/profile`}>
-          Profile
+        to={`${PUBLIC_URL}/account`}>
+          Account
       </Link>
       <div 
         className='nav-option sign-out' 

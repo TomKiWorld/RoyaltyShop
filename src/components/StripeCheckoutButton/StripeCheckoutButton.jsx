@@ -3,14 +3,15 @@ import axios from 'axios';
 
 import StripeCheckout from 'react-stripe-checkout';
 
-const PUBLIC_URL = process.env.PUBLIC_URL;
+const SERVER = process.env.SERVER;
 
 const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
   const publishableKey = process.env.REACT_APP_STRIPE_API;
   const onToken = token => {
+    console.log(token)
     axios({
-      url: `${PUBLIC_URL}/payment`,
+      url: `https://royalty-shop-server.herokuapp.com/payment`,
       method: 'post',
       data: {
         amount: priceForStripe,

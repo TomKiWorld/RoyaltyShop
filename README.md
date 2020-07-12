@@ -3,7 +3,7 @@
 ## Usage
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 - Demo webshop
-- Express server.
+- See the [Express server repository](https://github.com/TomKiWorld/RoyaltyShopServer) for this project.
 - Firebase](https://firebase.google.com/) to manage users.
 - [Stripe](https://stripe.com/) for payment processing 
 
