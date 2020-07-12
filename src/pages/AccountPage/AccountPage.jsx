@@ -23,8 +23,6 @@ const AccountPage = ({ currentUser }) => {
   const { displayName, createdAt } = currentUser;
   let memberSince = createdAt.toDate().toDateString();
 
-  console.log(memberSince)
-
   return (
     <section className='account-page'>
       <HeaderBanner imageUrl={`https://images.unsplash.com/photo-1447014421976-7fec21d26d86?w=1200&q=100`}>
@@ -37,7 +35,6 @@ const AccountPage = ({ currentUser }) => {
       <div className='container'>
         <p>RoyaltyShop member since: {memberSince}</p>
       </div>
-
     </section>
   );
 }
