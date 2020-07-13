@@ -52,6 +52,19 @@ export const getUserCartRef = async userId => {
   }
 };
 
+export const getUserWishListRef = async userId => {
+  const wishListRef = firestore.collection('wishlists').where('userId', '==', userId);
+  const snapShot = await wishListRef.get();
+
+  if (snapShot.empty) {
+    const wishListDocRef = firestore.collection('wishlists').doc();
+    await wishListDocRef.set({ userId, wishListItems: [] });
+    return wishListDocRef;
+  } else {
+    return snapShot.docs[0].ref;
+  }
+};
+
 export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
   const collectionRef = firestore.collection(collectionKey);
 

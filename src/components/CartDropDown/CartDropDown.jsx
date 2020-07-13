@@ -34,7 +34,7 @@ const CartDropDown = ({ cartItems, history, dispatch }) => (
             }}
           >Got to Checkout</CtaButton>
         : null
-      }    
+      }
     </div>
   </div>
 );

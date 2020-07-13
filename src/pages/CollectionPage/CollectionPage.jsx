@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import { selectCollection } from '../../redux/shop/shop.selectors';
-import { selectSection } from '../../redux/directory/directory.selectors'
+import { selectSection } from '../../redux/directory/directory.selectors';
 
 import HeaderBanner from '../../components/HeaderBanner/HeaderBanner';
 import HeaderTitleBlock from '../../components/HeaderTitleBlock/HeaderTitleBlock';
@@ -12,13 +12,15 @@ import BenefitsBanner from '../../components/BenefitsBanner/BenefitsBanner';
 
 import './CollectionPage.scss';
 
+const PUBLIC_URL = process.env.PUBLIC_URL;
+
 const CollectionPage = ({ collection, section, history }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [collection]);
 
   if (!collection || !section) {
-    return <Redirect to='/not-found' />;
+    return <Redirect to={`${PUBLIC_URL}/not-found`} />;
   }
   const { title, items } = collection;
   const { imageUrl } = section;
@@ -34,7 +36,7 @@ const CollectionPage = ({ collection, section, history }) => {
     <p 
       role='link'
       className='container back-link' 
-      onClick={() => history.push(`/shop`)}>
+      onClick={() => history.push(`${PUBLIC_URL}/shop`)}>
       &#10594; Back to Collections</p>
     <div className='collection-items container'>
       {
