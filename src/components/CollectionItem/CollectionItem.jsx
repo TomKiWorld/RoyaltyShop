@@ -41,11 +41,11 @@ const CollectionItem = ({ item, addItem, toggleItem, wishListItems }) => {
 
 const mapStateToProps = createStructuredSelector({
   wishListItems: selectWishListItems
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(addItem(item)),
   toggleItem: item => dispatch(toggleItem(item))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(CollectionItem);

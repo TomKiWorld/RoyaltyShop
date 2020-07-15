@@ -4,11 +4,17 @@ import { getUserCartRef } from '../../firebase/firebase.utils';
 import { selectCurrentUser } from '../user/user.selectors';
 import { clearCart, setCartFromFirebase } from './cart.actions';
 import { selectCartItems } from './cart.selectors';
-import UserActionTypes from '../user/user.types';
-import CartActionTypes from './cart.types';
+import userActionTypes from '../user/user.types';
+import cartActionTypes from './cart.types';
+import ordersActionTypes from '../orders/orders.types';
 
 export function* onClearCart() {
   yield put(clearCart());
+}
+
+export function* onEmptyCart() {
+  yield onClearCart();
+  yield updateCartInFirebase();
 }
 
 export function* updateCartInFirebase() {
@@ -31,28 +37,33 @@ export function* checkCartFromFirebase({ payload: user }) {
 }
 
 export function* onUserSignIn() {
-  yield takeLatest(UserActionTypes.SIGN_IN_SUCCESS, checkCartFromFirebase);
+  yield takeLatest(userActionTypes.SIGN_IN_SUCCESS, checkCartFromFirebase);
 }
 
 export function* onCartChange() {
   yield takeLatest(
     [
-      CartActionTypes.ADD_ITEM,
-      CartActionTypes.REMOVE_ITEM,
-      CartActionTypes.CLEAR_ITEM_FROM_CART
+      cartActionTypes.ADD_ITEM,
+      cartActionTypes.REMOVE_ITEM,
+      cartActionTypes.CLEAR_ITEM_FROM_CART
     ],
     updateCartInFirebase
   );
 }
 
 export function* onSignOutSuccess() {
-  yield takeLatest(UserActionTypes.SIGN_OUT_SUCCESS, onClearCart)
+  yield takeLatest(userActionTypes.SIGN_OUT_SUCCESS, onClearCart)
+}
+
+export function* onUpdateOrderSuccess() {
+  yield takeLatest(ordersActionTypes.UPDATE_ORDER_IN_FIREBASE, onEmptyCart)
 }
 
 export function* cartSagas() {
   yield all([
     call(onSignOutSuccess), 
     call(onCartChange), 
-    call(onUserSignIn)
+    call(onUserSignIn),
+    call(onUpdateOrderSuccess)
   ])
 }

@@ -4,8 +4,8 @@ import { getUserWishListRef } from '../../firebase/firebase.utils';
 import { selectCurrentUser } from '../user/user.selectors';
 import { clearWishList, setWishListFromFirebase } from './wishlist.actions';
 import { selectWishListItems } from './wishlist.selectors';
-import UserActionTypes from '../user/user.types';
-import WishlistTypes from './wishlist.types';
+import userActionTypes from '../user/user.types';
+import wishlistTypes from './wishlist.types';
 
 export function* onClearWishList() {
   yield put(clearWishList());
@@ -31,20 +31,20 @@ export function* checkWishListFromFirebase({ payload: user }) {
 }
 
 export function* onUserSignIn() {
-  yield takeLatest(UserActionTypes.SIGN_IN_SUCCESS, checkWishListFromFirebase);
+  yield takeLatest(userActionTypes.SIGN_IN_SUCCESS, checkWishListFromFirebase);
 }
 
 export function* onWishListChange() {
   yield takeLatest(
     [
-      WishlistTypes.TOGGLE_ITEM
+      wishlistTypes.TOGGLE_ITEM
     ],
     updateWishListInFirebase
   );
 }
 
 export function* onSignOutSuccess() {
-  yield takeLatest(UserActionTypes.SIGN_OUT_SUCCESS, onClearWishList)
+  yield takeLatest(userActionTypes.SIGN_OUT_SUCCESS, onClearWishList)
 }
 
 export function* wishListSagas() {

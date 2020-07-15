@@ -8,12 +8,14 @@ import OrderHistory from '../../components/OrderHistory/OrderHistory';
 import WishList from '../../components/WishList/WishList';
 
 import { selectCurrentUser } from '../../redux/user/user.selectors';
+import { selectOrdersForPreview } from '../../redux/orders/orders.selectors';
+import { fetchOrdersStart, unsetCurrentOrder } from '../../redux/orders/orders.actions';
 
 import './AccountPage.scss';
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
-const AccountPage = ({ currentUser, history }) => {
+const AccountPage = ({ currentUser, orders, history, fetchOrdersStart, unsetCurrentOrder }) => {
   const [view, setView] = useState('');
   useEffect(() => {
     window.scrollTo(0, 200);
@@ -38,7 +40,7 @@ const AccountPage = ({ currentUser, history }) => {
   const renderSwitch = (view) =>  {
     switch(view) {
       case 'OrderHistory':
-        return <OrderHistory />;
+        return <OrderHistory orders={orders} />;
       case 'WishList':    
         return <WishList />;
       default:
@@ -61,7 +63,11 @@ const AccountPage = ({ currentUser, history }) => {
             <p>View your order history or wish list:</p>
             <div className='account-page-cta'>
               <CtaButton
-                onClick={() => setView('OrderHistory')}
+                onClick={() => {
+                  fetchOrdersStart();
+                  unsetCurrentOrder();
+                  setView('OrderHistory');
+                }}
               >Order History</CtaButton>
               <CtaButton
                 onClick={() => setView('WishList')}
@@ -76,10 +82,16 @@ const AccountPage = ({ currentUser, history }) => {
       </div>
     </article>
   );
-}
+};
 
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+const mapDispatchToProps = dispatch => ({
+  fetchOrdersStart: () => dispatch(fetchOrdersStart()),
+  unsetCurrentOrder: () => dispatch(unsetCurrentOrder())
 });
 
-export default connect(mapStateToProps)(AccountPage);
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  orders: selectOrdersForPreview
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AccountPage);

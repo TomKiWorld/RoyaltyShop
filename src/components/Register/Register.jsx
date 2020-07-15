@@ -116,7 +116,7 @@ class Register extends React.Component {
       </section>
     )
   }
-}
+};
 
 const mapDispatchToProps = dispatch => ({
   signUpStart: userCredentials => dispatch(signUpStart(userCredentials))

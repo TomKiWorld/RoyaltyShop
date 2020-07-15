@@ -8,7 +8,7 @@ import CollectionsOverview from './CollectionsOverview';
 
 const mapStateToProps = createStructuredSelector({
   isLoading: selectCollectionPending
-})
+});
 
 const CollectionsOverviewContainer = compose(
   connect(mapStateToProps), 

@@ -48,7 +48,7 @@
       justify-content: center;
       color: $gold-color;
       text-shadow: 0.1rem 0.1rem $main-color;
-      background-color: rgba(128, 128, 128, 0.6);
+      background-color: $background-color-light;
       animation: fromTop 1s ease-out;
     }
 

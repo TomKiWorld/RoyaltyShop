@@ -4,18 +4,14 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 
-import Directory from '../Directory/Directory';
+import EmptyList from '../EmptyList/EmptyList';
 import CollectionItem from '../CollectionItem/CollectionItem';
 
 import { selectWishListItems } from '../../redux/wishlist/wishlist.selectors';
 
 const WishList = ({ wishListItems }) => (
   !wishListItems.length ?
-    <div className='empty-title'>
-      <h2>Your wish list is empty</h2>
-      <p>Take a look at our collections</p>
-      <Directory />
-    </div>
+    <EmptyList title={`Your wish list is empty`} />
     :
     <div className='wish-list'>
     {
@@ -30,6 +26,6 @@ const WishList = ({ wishListItems }) => (
 
 const mapStateToProps = createStructuredSelector({
   wishListItems: selectWishListItems
-})
+});
 
 export default withRouter(connect(mapStateToProps)(WishList));

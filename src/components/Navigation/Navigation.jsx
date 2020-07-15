@@ -119,7 +119,7 @@ const Navigation = ({ currentUser, toggleShopNav }) => {
       </nav>
     </React.Fragment>      
   );
-}
+};
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser

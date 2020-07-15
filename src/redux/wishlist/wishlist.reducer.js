@@ -1,4 +1,4 @@
-import WishlistTypes from './wishlist.types';
+import wishlistTypes from './wishlist.types';
 import { toggleWishListItem } from './wishlist.utils';
 
 const INITAL_STATE = {
@@ -7,17 +7,17 @@ const INITAL_STATE = {
 
 const wishListReducer = ( state = INITAL_STATE, action ) => {
   switch (action.type) {
-    case WishlistTypes.TOGGLE_ITEM:
+    case wishlistTypes.TOGGLE_ITEM:
       return {
         ...state,
         wishListItems: toggleWishListItem(state.wishListItems, action.payload)
       }
-    case WishlistTypes.CLEAR_WISH_LIST:
+    case wishlistTypes.CLEAR_WISH_LIST:
       return {
         ...state,
         wishListItems: []
       }
-    case WishlistTypes.SET_LIST_FROM_FIREBASE:
+    case wishlistTypes.SET_LIST_FROM_FIREBASE:
       return {
         ...state,
         wishListItems: action.payload

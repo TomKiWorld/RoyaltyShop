@@ -1,0 +1,48 @@
+@import '../../styles//config.scss';
+
+.drop-down-message {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-color-light;
+  z-index: 15;
+
+  &-content {
+    width: 90%;
+    height: 90%;
+    background-color: $base-color;
+    overflow-y: scroll;
+    position: relative;
+    animation: bunceFromTop 2s cubic-bezier(0.280, 0.840, 0.420, 1);
+  }
+
+  &-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    z-index: 20;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    background-color: $base-color;
+    line-height: 3rem;
+    border: $border-style;
+  }
+}
+
+@keyframes bunceFromTop {
+  0%   { transform: scale(1,1) translateY(-200vh); }
+  10%  { transform: scale(1.1,.9) translateY(-200vh); }
+  30%  { transform: scale(.9,1.1) translateY(0); }
+  47%  { transform: scale(1,.95) translateY(-20vh); }
+  59%  { transform: scale(.9,1.1) translateY(0); }
+  67%  { transform: scale(1,0.95) translateY(-10vh); }
+  74%  { transform: scale(1,1) translateY(0); }
+  100% { transform: scale(1,1) translateY(0); }
+}

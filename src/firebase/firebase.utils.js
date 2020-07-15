@@ -58,12 +58,48 @@ export const getUserWishListRef = async userId => {
 
   if (snapShot.empty) {
     const wishListDocRef = firestore.collection('wishlists').doc();
-    await wishListDocRef.set({ userId, wishListItems: [] });
+    await wishListDocRef.set({ userId, wishlistItems: [] });
     return wishListDocRef;
   } else {
     return snapShot.docs[0].ref;
   }
 };
+
+export const setOrderDocument = async (userId, order) => {
+  if (!userId) return;
+
+  const ordersRef = firestore.collection('orders').doc();
+  try {
+    await ordersRef.set({ userId, order: order });
+    return getUserOrdersDocs(userId);
+  } catch (err) {
+    console.log('error creating order in database', err.message);
+  }
+  
+}
+
+export const getUserOrdersDocs = async userId => {
+  const ordersRef = firestore.collection('orders').where('userId', '==', userId);
+  const snapShot = await ordersRef.get();
+
+  if (snapShot.empty) {
+    return [];
+  } else {
+    return snapShot.docs;
+  }
+};
+
+export const convertOrdersSnapshotToMap = (orders) => {
+  const transformedOrders = orders.docs.map(doc => {
+    const { order } = doc.data();
+
+    return {
+      order
+    };
+  });
+
+  return transformedOrders;
+}
 
 export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
   const collectionRef = firestore.collection(collectionKey);

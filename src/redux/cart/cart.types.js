@@ -1,4 +1,4 @@
-const CartActionTypes = {
+const cartActionTypes = {
   TOGGLE_CART_HIDDEN: 'TOGGLE_CART_HIDDEN',
   ADD_ITEM: 'ADD_ITEM',
   REMOVE_ITEM: 'REMOVE_ITEM',
@@ -8,4 +8,4 @@ const CartActionTypes = {
   UPDATE_CART_IN_FIREBASE: 'UPDATE_CART_IN_FIREBASE'
 };
 
-export default CartActionTypes;
+export default cartActionTypes;

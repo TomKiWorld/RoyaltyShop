@@ -3,27 +3,42 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 
-import CartItem from '../CartItem/CartItem';
-import { selectCartItems } from '../../redux/cart/cart.selectors';
 
-const OrderHistory = ({ cartItems }) => (
-  <div className='order-history'>
-    <div className='order-history-overview'>
-      <h2>Overview</h2>
-    </div>
-    <div className='order-history-status'>
-      <h2>Status</h2>
-    
-    </div>
-    <div className='order-history-single'>
-      <h2>Single</h2>
-      
+import EmptyList from '../EmptyList/EmptyList';
+import OrdersOverview from '../OrdersOverview/OrdersOverview';
+import OrderDetails from '../OrderDetails/OrderDetails';
+
+import { selectCurrentOrder } from '../../redux/orders/orders.selectors';
+import { selectCartItems } from '../../redux/cart/cart.selectors';
+import { unsetCurrentOrder } from '../../redux/orders/orders.actions';
+
+const OrderHistory = ({ orders, currentOrder, unsetCurrentOrder }) => (
+
+  !orders.length ?
+  <EmptyList title={`No orders placed so far`} />
+  :
+  <div 
+    className='orders-container' 
+    style={{ 
+      left: currentOrder ? '-100%' : 0}}>
+    <OrdersOverview orders={orders} />
+    <div className='order-details-container'>
+      <p
+        className='back-link' 
+        onClick={unsetCurrentOrder}>
+        &#10594; Back to Orders overview</p>
+      <OrderDetails order={currentOrder} />
     </div>
   </div>
 );
 
-const mapStateToProps = createStructuredSelector({
-  cartItems: selectCartItems
-})
+const mapDispatchToProps = dispatch => ({
+  unsetCurrentOrder: () => dispatch(unsetCurrentOrder())
+});
 
-export default withRouter(connect(mapStateToProps)(OrderHistory));
+const mapStateToProps = createStructuredSelector({
+  cartItems: selectCartItems,
+  currentOrder: selectCurrentOrder
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OrderHistory));

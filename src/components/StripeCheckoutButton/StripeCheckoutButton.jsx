@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import StripeCheckout from 'react-stripe-checkout';
+import Preloader from '../Preloader/Preloader';
 
-console.log(process.env.REACT_APP_SERVER)
+import { updateOrderInFirebase } from '../../redux/orders/orders.actions';
 
-const StripeCheckoutButton = ({ price }) => {
+const PUBLIC_URL = process.env.PUBLIC_URL;
+
+const StripeCheckoutButton = ({ price, updateOrderInFirebase, setDropdown }) => {
+  const [loading, setLoading] = useState(false)
   const priceForStripe = price * 100;
   const publishableKey = process.env.REACT_APP_STRIPE_API;
   const onToken = token => {
+    setLoading(true);
     axios({
       url: process.env.REACT_APP_SERVER,
       method: 'post',
@@ -18,7 +25,9 @@ const StripeCheckoutButton = ({ price }) => {
       }
     })
     .then(response => {
-      alert('Payment successful');
+      updateOrderInFirebase();
+      setLoading(false);
+      setDropdown(true);
     })
     .catch(error => {
       console.log('Payment error: ', error)
@@ -27,7 +36,9 @@ const StripeCheckoutButton = ({ price }) => {
   };
 
   return (
-    <StripeCheckout 
+    <React.Fragment>
+      { loading ? <Preloader /> : null}
+      <StripeCheckout 
       label='Payment Info'
       name='RoyaltyShop'
       currency='EUR'
@@ -39,7 +50,12 @@ const StripeCheckoutButton = ({ price }) => {
       token={onToken}
       stripeKey={publishableKey}
     />
+    </React.Fragment>
   )
-}
+};
 
-export default StripeCheckoutButton;
+const mapDispatchToProps = dispatch => ({
+  updateOrderInFirebase: () => dispatch(updateOrderInFirebase())
+});
+
+export default withRouter(connect(null, mapDispatchToProps)(StripeCheckoutButton));
