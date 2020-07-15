@@ -36,7 +36,6 @@ const ThankYouTemplate = ({ title, imageUrl, children, history }) => {
       </div>
     </div>
   )
-}
+};
 
 export default withRouter(ThankYouTemplate);
-

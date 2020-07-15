@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -20,10 +20,13 @@ import './CheckOutPage.scss';
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
 const CheckOutPage = ({ cartItems, cartTotal, currentUser, history, currentOrder, unsetCurrentOrder }) => {
-  const [dropdown, setDropdown] = useState(false);
+  const [dropdown, setDropdown] = useState(true);
+  useEffect(() => {
+    unsetCurrentOrder();
+  }, [cartItems]);
 
   const onClose = () => {
-    setDropdown();
+    setDropdown(false);
     unsetCurrentOrder();
   }
 

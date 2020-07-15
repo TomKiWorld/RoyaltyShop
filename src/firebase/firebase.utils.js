@@ -75,7 +75,6 @@ export const setOrderDocument = async (userId, order) => {
   } catch (err) {
     console.log('error creating order in database', err.message);
   }
-  
 }
 
 export const getUserOrdersDocs = async userId => {

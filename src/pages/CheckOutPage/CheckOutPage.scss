@@ -18,7 +18,7 @@
     min-height: 6.25rem;
     border-bottom: 0.05rem solid $sub-color;
     padding: 1rem 0;
-    font-size: 1.2rem;
+    font-size: $medium-font;
     align-items: center;
   
     .image-container {
@@ -47,7 +47,7 @@
           &:after {
             position: absolute;
             top: 0.3rem;
-            font-size: 0.5rem;
+            font-size: $xsmall-font;
             font-weight: bold;
             letter-spacing: 0.1rem;
             background-color: $background-color-light;

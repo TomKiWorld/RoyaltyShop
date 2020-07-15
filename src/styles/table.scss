@@ -16,7 +16,7 @@
   }
 
   @media screen and (min-width: 48rem) {
-    font-size: 1.2rem;
+    font-size: $medium-font;
   }
 }
 
@@ -32,7 +32,7 @@
 
   .total {
     margin-left: auto;
-    font-size: 2.25rem;
+    font-size: $large-font;
     text-transform: uppercase;
   }
 
@@ -45,7 +45,7 @@
     text-align: center;
     
     @media screen and (min-width: 31rem) {
-      font-size: 1.2rem;
+      font-size: $medium-font;
     }
   }
 }

@@ -34,7 +34,6 @@ const OrdersOverview = ({ orders }) => {
       </footer>
     </div>
   )
-}
+};
 
 export default OrdersOverview;
-

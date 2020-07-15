@@ -35,7 +35,7 @@
   .title-container {
     width: 40%;
     position: relative;
-    font-size: 1.5rem;
+    font-size: $title-font;
     text-align: center;
 
     .title-block {
@@ -53,10 +53,10 @@
     }
 
     h2 {
-      font-size: 1.8rem;
+      font-size: $large-font;
 
       @media screen and (min-width: 31rem) {
-        font-size: 3rem;
+        font-size: $xlarger-font;
       }
     }
 

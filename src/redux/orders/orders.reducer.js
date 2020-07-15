@@ -6,6 +6,7 @@ const INITAL_STATE = {
   errorMessage: '',
   currentOrder : null
 }
+
 const ordersReducer = ( state = INITAL_STATE, action ) => {
   switch (action.type) {
     case ordersActionTypes.CLEAR_ORDERS:

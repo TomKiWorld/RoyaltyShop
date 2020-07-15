@@ -57,7 +57,7 @@
     &-description {
       width: 95%;
       height: 2rem;
-      font-size: 0.8rem;
+      font-size: $smaller-font;
     }
 
     &-circle {
@@ -100,7 +100,7 @@
   span {
     width: 25%;
     padding-left: 0.5rem;
-    font-size: 0.8rem;
+    font-size: $smaller-font;
   }
 
   .details {
@@ -111,6 +111,6 @@
     width: 4rem;
     height: 2rem;
     line-height: 2rem;
-    font-size: 0.8rem;
+    font-size: $smaller-font;
   }
 }

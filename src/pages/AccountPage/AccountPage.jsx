@@ -35,7 +35,6 @@ const AccountPage = ({ currentUser, orders, history, fetchOrdersStart, unsetCurr
   }
 
   const { displayName, createdAt } = currentUser;
-  let memberSince = createdAt.toDate().toDateString();
 
   const renderSwitch = (view) =>  {
     switch(view) {
@@ -58,7 +57,7 @@ const AccountPage = ({ currentUser, orders, history, fetchOrdersStart, unsetCurr
         </div>
       </HeaderBanner>
       <div className='container'>
-        <p>RoyaltyShop member since: {memberSince}</p>
+        <p>RoyaltyShop member since: {createdAt.toDate().toDateString()}</p>
           <header className='account-page-header'>
             <p>View your order history or wish list:</p>
             <div className='account-page-cta'>

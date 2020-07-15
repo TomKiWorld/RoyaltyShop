@@ -108,18 +108,18 @@
 
     &-title {
       text-transform: uppercase;
-      font-size: 1.5rem;
+      font-size: $title-font;
     }
 
     &-subtitle {
-      font-size: 2rem;
+      font-size: $large-font;
       color: $gold-color;
       font-weight: bold;
       margin: 0.2rem;
     }
 
     &-message {
-      font-size: 1.5rem;
+      font-size: $title-font;
     }
     
     @media screen and (min-width: 31rem) {
