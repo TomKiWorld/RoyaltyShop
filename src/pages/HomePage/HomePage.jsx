@@ -10,6 +10,8 @@ import BenefitsBanner from '../../components/BenefitsBanner/BenefitsBanner';
 
 import './HomePage.scss';
 
+const PUBLIC_URL = process.env.PUBLIC_URL;
+
 const images = [
   'https://i.ibb.co/QcvzydB/nikes-red.jpg',
   'https://i.ibb.co/mh3VM1f/polka-dot-shirt.jpg',
@@ -37,7 +39,7 @@ const HomePage = ({ history }) => {
           subtitle={new Date().getFullYear()}
           message={`Collection`}
           btnText={`View collections`}
-          onBtnClick={() => history.push(`/shop`)}
+          onBtnClick={() => history.push(`${PUBLIC_URL}/shop`)}
         />
       </ImageBanner>
       <BenefitsBanner />

@@ -1,5 +1,5 @@
-// Cart styles
 @import './config.scss';
+
 .cart-icon {
   width: 2.8rem;
   height: 2.8rem;
@@ -31,7 +31,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(128, 128, 128, 0.6);
+  background-color: $background-color-light;
   z-index: 5;
 
   .cart {
@@ -85,7 +85,7 @@
         padding: 0.5rem 1rem;
     
         .name {
-          font-size: 1rem;
+          $normal-font: $normal-font;
         }
       }
     }

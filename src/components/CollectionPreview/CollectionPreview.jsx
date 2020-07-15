@@ -10,8 +10,9 @@ const CollectionPreview = ({title, items, history, match, routeName }) => (
       className='collection-title'
       role='link'
       onClick={() => history.push(`${match.path}/${routeName}`)}>{title}
-      <span>See more</span></h2>
-      <Underline className='title-underline'/>
+      <span>See more</span>
+    </h2>
+    <Underline className='title-underline'/>
     <section className='preview'>
       {items
         .filter((item, idx) => idx < 4)

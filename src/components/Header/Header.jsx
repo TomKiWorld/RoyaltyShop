@@ -20,10 +20,10 @@ const Header = ({ hideCart }) => {
       { hideCart ? null : <CartDropDown /> }
     </header>
   );
-}
+};
 
 const mapStateToProps = createStructuredSelector({
   hideCart: selectCartHidden
-})
+});
 
 export default connect(mapStateToProps)(Header);

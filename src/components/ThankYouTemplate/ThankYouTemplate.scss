@@ -1,0 +1,24 @@
+@import '../../styles/config.scss';
+@import '../../styles/continue-block.scss';
+
+.thank-you-template {
+  &-title {
+    position: absolute;
+    top: 12rem;
+    left: 2rem;
+    width: 50%;
+    min-width: 16rem;
+    background-color: $base-color;
+    text-align: center;
+    font-size: $large-font;
+    border: $border-style;
+
+    h2 {
+      text-transform: uppercase;
+    }
+  }
+
+  .warning-message {
+    text-align: center;
+  }
+}

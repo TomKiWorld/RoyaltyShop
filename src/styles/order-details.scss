@@ -1,0 +1,116 @@
+.order-details {
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+
+  .header-block,
+  .order-row span {
+    width: 25%;
+  }
+
+  .item-details {
+    display: flex;
+    align-items: center;
+
+    .image-container {
+      display: inline-block;
+      width: 25%;
+
+      img {
+        width: 80%;
+        display: inline-block;
+        margin: 0 auto;
+      }
+    }
+
+    span {
+      width: 25%;
+      padding-left: 0.5rem
+    }
+  }
+
+  .status-bar {
+    width: 80%;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+
+    &-item {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+
+      &:last-of-type {
+        width: 10%;
+      }
+    }
+
+    &-visual {
+      width: 100%;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    &-description {
+      width: 95%;
+      height: 2rem;
+      font-size: $smaller-font;
+    }
+
+    &-circle {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      border: $border-style;
+    }
+
+    &-strip {
+      width: calc(100% - 1rem);
+      height: 0.3rem;
+      border: $border-style;
+      border-left: none;
+      border-right: none;
+    }
+
+    &-text {
+      width: 25%;
+    }
+
+    .done {
+      background-color: $gold-color;
+    }
+  }
+
+  .table-header .header-block {
+    padding-left: 0.5rem;
+  }
+}
+
+.order-row {
+  width: 100%;
+  display: flex;
+  min-height: 5rem;
+  border-bottom: 0.05rem solid $gold-color;
+  padding: 1rem 0;
+  align-items: center;
+
+  span {
+    width: 25%;
+    padding-left: 0.5rem;
+    font-size: $smaller-font;
+  }
+
+  .details {
+    padding-left: 0;
+  }
+
+  .cta-button {
+    width: 4rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: $smaller-font;
+  }
+}

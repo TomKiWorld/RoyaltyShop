@@ -28,7 +28,7 @@ const ProfileLinks = ({ signOutStart }) => {
         }>Sign Out</div>
     </React.Fragment>
   );
-}
+};
 
 const mapStateToProps = dispatch => ({
   signOutStart: () => dispatch(signOutStart())

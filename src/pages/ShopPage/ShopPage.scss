@@ -1,5 +1,6 @@
 // Shop page styles
 @import '../../styles/config.scss';
+@import '../../styles/collection-item.scss';
 
 .shop-page {
   .collections-overview {
@@ -32,7 +33,7 @@
 
       span {
         display: block;
-        font-size: 0.8rem;
+        font-size: $small-font;
         margin-bottom: 0.5rem;
       }
     }
@@ -60,77 +61,5 @@
 
   .collection-title {
     @include sectionTitle();
-  }
-
-  .collection-item {
-    width: 48%;
-    display: flex;
-    flex-direction: column;
-    height: 20rem;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 1rem;
-
-    &:hover,
-    &:focus {
-      cursor: pointer;
-  
-      & .background-image {
-        transform: scale(1.05);
-        transition: transform 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-      }
-    }
-  
-    .background-image {
-      width: 100%;
-      height: 90%;
-      background-size: cover;
-      background-position: center;
-      margin-bottom: 0.5rem;
-    }
-  
-    .collection-footer {
-      width: 100%;
-      height: 5%;
-      display: flex;
-      justify-content: space-between;
-      font-size: $medium-font;
-  
-      .name {
-        width: 80%;
-      }
-  
-      .price {
-        width: 20%;
-      }
-    }
-
-    .cta-button {
-      width: 80%;
-      opacity: 0.7;
-      position: absolute;
-      top: 14rem;
-      display: none;
-      font-size: $smaller-font;
-      padding: 0;
-    }
-
-    &:hover,
-    &:focus {
-      .background-image {
-        opacity: 0.8;
-      }
-
-      .cta-button {
-        display: block;
-        opacity: 0.85;
-      }
-    }
-
-    @media screen and (min-width: 48rem) {
-      width: 22%;
-      margin-bottom: 0;
-    }
   }
 }

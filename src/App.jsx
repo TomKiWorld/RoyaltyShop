@@ -50,7 +50,7 @@ class App extends React.Component {
                     <LoginPage />}/>
                 <Route exact path={`${PUBLIC_URL}/checkout`} component={CheckOutPage} />
                 <Route exact path={`${PUBLIC_URL}/account`} component={AccountPage} />
-                <Route path={[`${PUBLIC_URL}/contact`, `${PUBLIC_URL}/account`]} component={ComingSoonPage} />
+                <Route path={[`${PUBLIC_URL}/contact`]} component={ComingSoonPage} />
                 <Route component={NotFoundPage}/>
               </Switch>
             </SuspenseLoad>
@@ -59,7 +59,7 @@ class App extends React.Component {
       </React.Fragment>    
     );
   }
-}
+};
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser

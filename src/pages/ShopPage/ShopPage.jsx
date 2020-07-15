@@ -34,7 +34,7 @@ const ShopPage = ({ fetchCollectionsStart, match }) => {
       </SuspenseLoad>
     </section>
   );
-}
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchCollectionsStart: () => dispatch(fetchCollectionsStart())

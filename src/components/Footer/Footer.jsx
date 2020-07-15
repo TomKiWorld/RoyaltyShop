@@ -41,10 +41,10 @@ const Footer = ({ currentUser }) => {
       <p>Made with <span>&hearts;</span> by <a className='tomki-link' href='https://github.com/TomKiWorld' target='_blank' rel='noopener noreferrer'>TomKiWorld</a></p>
     </footer>
   );
-}
+};
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
-})
+});
 
 export default connect(mapStateToProps)(Footer);

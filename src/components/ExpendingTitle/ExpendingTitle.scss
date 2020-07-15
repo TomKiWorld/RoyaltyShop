@@ -8,16 +8,16 @@
   color: $gold-color;
   text-shadow: 0.1rem 0.1rem $main-color;
   z-index: 5;
-  font-size: 1.5rem;
+  font-size: $title-font;
 
   h2 {
     letter-spacing: 0;
     animation: expend 8s infinite;
     text-transform: uppercase;
-    font-size: 1.8rem;
+    font-size: $large-font;
 
     @media screen and (min-width: 31rem) {
-      font-size: 3rem;
+      font-size: $xlarger-font;
     }
   }
 }

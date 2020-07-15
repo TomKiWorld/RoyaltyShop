@@ -5,13 +5,18 @@ $gold-color: gold;
 $main-color: black;
 $error-color: #FF0404;
 $google-blue: #4285F4;
+$background-color-light: rgba(128, 128, 128, 0.6);
+$background-color-lighter: rgba(128, 128, 128, 0.3);
 
 // Font size
+$xsmall-font: 0.5rem;
 $smaller-font: 0.75rem;
 $small-font: 0.9rem;
 $normal-font: 1rem;
 $medium-font: 1.125rem;
 $title-font: 1.5rem;
+$large-font: 2rem;
+$xlarger-font: 3rem;
 
 // Other
 $border-style: 0.05rem solid $main-color;
@@ -24,7 +29,7 @@ $border-style: 0.05rem solid $main-color;
 }
 
 @mixin sectionTitle {
-  font-size: 2rem;
+  font-size: $large-font;
   text-align: center;
 }
 

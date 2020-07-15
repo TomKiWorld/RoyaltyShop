@@ -1,11 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import CtaButton from '../CtaButton/CtaButton';
 import { addItem } from '../../redux/cart/cart.actions';
+import { toggleItem } from '../../redux/wishlist/wishlist.actions';
+import { selectWishListItems } from '../../redux/wishlist/wishlist.selectors';
 
-const CollectionItem = ({ item, addItem }) => {
-  const { imageUrl, name, price } = item;
+import { ReactComponent as Heart } from '../../assets/heart.svg';
+
+const CollectionItem = ({ item, addItem, toggleItem, wishListItems }) => {
+  const { imageUrl, name, price, id } = item;
+  const isFavorite = (wishListItems.filter(wishListItem => wishListItem.id === id ).length) > 0;
+
   return (
     <div 
       className='collection-item'>
@@ -15,6 +22,12 @@ const CollectionItem = ({ item, addItem }) => {
           backgroundImage: `url(${imageUrl})`
         }}
       />
+      <Heart 
+        onClick={() => toggleItem(item)}
+        className='wish-list-icon'
+        fill={ isFavorite ? 'black' : 'white'}
+        stroke={ isFavorite ? 'white' : 'black'}
+        />
       <div className='collection-footer'>
         <span className='name'>{name}</span>
         <span className='price'>€{price}</span>
@@ -26,8 +39,13 @@ const CollectionItem = ({ item, addItem }) => {
   )
 };
 
-const mapDispatchToProps = dispatch => ({
-  addItem: item => dispatch(addItem(item))
-})
+const mapStateToProps = createStructuredSelector({
+  wishListItems: selectWishListItems
+});
 
-export default connect(null, mapDispatchToProps)(CollectionItem);
+const mapDispatchToProps = dispatch => ({
+  addItem: item => dispatch(addItem(item)),
+  toggleItem: item => dispatch(toggleItem(item))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CollectionItem);
