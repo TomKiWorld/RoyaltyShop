@@ -8,7 +8,6 @@ import Preloader from '../Preloader/Preloader';
 
 import { updateOrderInFirebase } from '../../redux/orders/orders.actions';
 
-const PUBLIC_URL = process.env.PUBLIC_URL;
 
 const StripeCheckoutButton = ({ price, updateOrderInFirebase, setDropdown }) => {
   const [loading, setLoading] = useState(false)

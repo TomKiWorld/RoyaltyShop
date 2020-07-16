@@ -1,0 +1,50 @@
+@import '../../styles/config.scss';
+@import '../../styles/form-group.scss';
+
+.contact-page {
+  &-split {
+    position: relative;
+
+    &-content {
+      position: absolute;
+      width: 80%;
+      height: 90%;
+      left: 10%;
+      top: 5%;
+      overflow-y: scroll;
+      background-color: $base-color;
+      padding: 1rem;
+
+      @media screen and (min-width: 48rem) {
+        position: unset;
+        width: 100%;
+      }
+
+      .message-content {
+        width: 100%;
+        border: 0.07rem solid grey;
+        margin-bottom: 1rem;
+      }
+
+      .cta-button {
+        width: 100%;
+        max-width: 20rem;
+        margin-left: auto;
+      }
+    }
+    
+    .header-banner {
+      z-index: -1;
+      height: 90vh;
+    }
+
+    .thank-you-template .header-banner {
+      position: unset;
+      height: 60vh;
+    }
+
+    @media screen and (min-width: 48rem) {
+      display: flex;
+    }
+  }
+}

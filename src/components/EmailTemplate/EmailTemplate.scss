@@ -1,0 +1,35 @@
+@import '../../styles//config.scss';
+
+.email-template {
+  .email-layout {
+    width: 100%;
+    min-height: 10rem;
+    padding: 1rem;
+    background-color: $background-color-lighter;
+    font-family: monospace;
+
+    span {
+      font-size: $smaller-font;
+      display: inline-block;
+      font-weight: normal;
+      width: 4rem;
+    }
+
+    .subject {
+      font-weight: bold;
+      font-size: $medium-font;
+    }
+
+    .email {
+      font-size: $small-font
+    }
+
+    .content {
+      width: 95%;
+      margin: 1rem auto;
+      background-color: $background-color-lighter;
+      padding: 0.5rem;
+      white-space: pre-wrap;
+    }
+  }
+}
