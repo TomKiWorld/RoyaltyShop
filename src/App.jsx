@@ -20,6 +20,7 @@ const CheckOutPage = lazy(() => import('./pages/CheckOutPage/CheckOutPage'));
 const ComingSoonPage = lazy(() => import('./pages/ComingSoonPage/ComingSoonPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 const AccountPage = lazy(() => import('./pages/AccountPage/AccountPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage/ContactPage'));
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
@@ -50,7 +51,8 @@ class App extends React.Component {
                     <LoginPage />}/>
                 <Route exact path={`${PUBLIC_URL}/checkout`} component={CheckOutPage} />
                 <Route exact path={`${PUBLIC_URL}/account`} component={AccountPage} />
-                <Route path={[`${PUBLIC_URL}/contact`]} component={ComingSoonPage} />
+                <Route path={[`${PUBLIC_URL}/contact`]} component={ContactPage} />
+                <Route path={[`${PUBLIC_URL}/search`]} component={ComingSoonPage} />
                 <Route component={NotFoundPage}/>
               </Switch>
             </SuspenseLoad>
