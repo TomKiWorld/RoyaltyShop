@@ -4,7 +4,7 @@ const INITAL_STATE = {
   searchField: '',
   collectionsFilter: [],
   filteredItems: []
-}
+};
 
 const searchReducer = (state =INITAL_STATE, action) => {
   switch(action.type) {

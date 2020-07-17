@@ -26,6 +26,11 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
       }
     }
+
+    .empty-title,
+    .search-results h2 {
+      text-align: center;
+    }
   }
 
   &-title {
