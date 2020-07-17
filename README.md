@@ -1,4 +1,4 @@
-# ![alt text](https://github.com/TomKiWorld/RoyaltyShop/blob/master/client/src/assets/royalty-logo.svg?raw=true) RoyaltyShop ![alt text](https://github.com/TomKiWorld/RoyaltyShop/blob/master/client/src/assets/royalty-logo.svg?raw=true)
+# ![](https://github.com/TomKiWorld/RoyaltyShop/blob/master/src/assets/royalty-logo.svg?raw=true) RoyaltyShop ![](https://github.com/TomKiWorld/RoyaltyShop/blob/master/src/assets/royalty-logo.svg?raw=true)
 
 ## Usage
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

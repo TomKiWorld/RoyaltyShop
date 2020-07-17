@@ -1,0 +1,7 @@
+const searchActionTypes = {
+  CHANGE_SEARCH_FIELD: 'CHANGE_SEARCH_FIELD',
+  SET_COLLECTIONS_FILTER: 'SET_COLLECTIONS_FILTER',
+  SET_FILTERED_ITEMS: 'SET_FILTERED_ITEMS'
+};
+
+export default searchActionTypes;

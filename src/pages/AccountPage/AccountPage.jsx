@@ -21,6 +21,10 @@ const AccountPage = ({ currentUser, orders, history, fetchOrdersStart, unsetCurr
     window.scrollTo(0, 200);
   }, [view]);
 
+  useEffect(() => {
+    fetchOrdersStart();
+  }, [fetchOrdersStart]);
+
   if (!currentUser) {
     return (
       <HeaderBanner imageUrl={`https://images.unsplash.com/photo-1447014421976-7fec21d26d86?w=1200&q=100`}>

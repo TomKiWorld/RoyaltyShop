@@ -52,13 +52,7 @@ export function* fetchOrdersAsync() {
 }
 
 export function* fetchOrdersAsyncStart() {
-  yield takeLatest(
-    [
-      ordersActionTypes.REQUEST_ORDERS_START,
-      userActionTypes.SIGN_IN_SUCCESS
-    ],
-    fetchOrdersAsync
-  );
+  yield takeLatest(ordersActionTypes.REQUEST_ORDERS_START,fetchOrdersAsync);
 }
 
 export function* onPaymentSuccess() {

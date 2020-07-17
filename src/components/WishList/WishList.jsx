@@ -10,16 +10,16 @@ import { selectWishListItems } from '../../redux/wishlist/wishlist.selectors';
 
 const WishList = ({ wishListItems }) => (
   !wishListItems.length ?
-    <EmptyList title={`Your wish list is empty`} />
-    :
-    <div className='wish-list'>
+  <EmptyList title={`Your wish list is empty`} />
+  :
+  <div className='wish-list'>
     {
-      wishListItems.map(item => (
-          <CollectionItem 
-            key={item.id} 
-            item={item} />
-        ))
-      }
+    wishListItems.map(item => (
+        <CollectionItem 
+          key={item.id} 
+          item={item} />
+      ))
+    }
   </div>
 );
 
