@@ -10,7 +10,7 @@ import TwoImagesTitleBlock from '../TwoImagesTitleBlock/TwoImagesTitleBlock';
 import CollectionPreview from '../CollectionPreview/CollectionPreview';
 import BenefitsBanner from '../BenefitsBanner/BenefitsBanner';
 
-const CollectionsOverview = ({ collections }) => {  
+const CollectionsOverview = ({ collections }) => { 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [collections]);
