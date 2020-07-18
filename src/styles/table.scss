@@ -25,10 +25,9 @@
 }
 
 .table-footer {
-  display: flex;
-  flex-direction: column;
   margin-top: 1.75rem;
   width: 100%;
+  @include flexCol();
 
   .total {
     margin-left: auto;

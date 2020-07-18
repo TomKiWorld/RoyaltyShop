@@ -1,12 +1,10 @@
 @import '../../styles/config.scss';
 
 .benefits-banner {
-  width: 100%;
-  height: 20vh;
-  display: flex;
-  justify-content: space-around;
   align-items: center;
   text-align: center;
+  @include flexSpAround();
+  @include size(100%, 20vh);
 
   &-box {
     width: 20%;

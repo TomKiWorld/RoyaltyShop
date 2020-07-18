@@ -1,0 +1,28 @@
+@import '../../styles/config.scss';
+
+.preloader {
+  &-overlay {
+    @include flexAlJuCenter();
+    @include size(100%, 60vh);
+  }
+
+  &-container {
+    display: inline-block;
+    border: 0.2rem solid rgba(195, 195, 195, 0.6);
+    border-radius: 50%;
+    border-top-color: $sub-color;
+    animation: spin 1s ease-in-out infinite;
+    @include size(4rem);
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}

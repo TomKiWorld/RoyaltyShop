@@ -1,33 +1,28 @@
 // CheckOut page styles
 @import '../../styles/config.scss';
 @import '../../styles/table.scss';
-@import '../../styles/order-details.scss';
 
 .checkout-page {
   width: 90%;
   max-width: 45rem;
   min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding-top: 2rem;
+  @include flexColAlCenter();
 
   .checkout-item {
     width: 100%;
-    display: flex;
     min-height: 6.25rem;
     border-bottom: 0.05rem solid $sub-color;
     padding: 1rem 0;
     font-size: $medium-font;
-    align-items: center;
+    @include flexAlCenter();
   
     .image-container {
       width: 23%;
       padding-right: 1rem;
   
       img {
-        width: 100%;
-        height: 100%;
+        @include size(100%);
       }
     }
     .name,
@@ -40,18 +35,16 @@
       display: flex;
       
       .arrow {
-        cursor: pointer;
         position: relative;
 
         &:hover {
           &:after {
-            position: absolute;
-            top: 0.3rem;
             font-size: $xsmall-font;
             font-weight: bold;
             letter-spacing: 0.1rem;
             background-color: $background-color-light;
             padding: 0.2rem 0.5rem;
+            @include absoluteLeftPosition(0.3rem, auto);
           }
 
           &:first-of-type {
@@ -77,22 +70,16 @@
   
     .remove-button {
       padding-left: 0.75rem;
-      cursor: pointer;
     }
   }
 
   .take-action {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-weight: bold;
+    @include flexColAlJuCenter();
   }
 
   .preloader-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
     z-index: 15;
+    @include fixedPosition();
   }
 }

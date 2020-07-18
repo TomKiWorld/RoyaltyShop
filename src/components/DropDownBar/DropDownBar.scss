@@ -1,0 +1,21 @@
+@import '../../styles/config.scss';
+
+.drop-down-bar {
+  line-height: 1rem;
+  background-color: $sub-color;
+  padding: 0.5em;
+  flex-wrap: wrap;
+  animation: opacity 0.5s ease-out;
+  @include flexSpAround();
+  @include size(100%, auto);
+  @include fixedPosition(5rem);
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

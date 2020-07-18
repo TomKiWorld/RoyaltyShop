@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import ItemDetails from '../ItemDetails/ItemDetails';
 
+import './OrderDetails.scss';
+
 const OrderDetails = ({ order }) => {
+  useEffect(() => {
+    const tableHeader = document.querySelector('.table-header');
+    if (tableHeader) {
+      tableHeader.scrollIntoView();
+    }
+  }, [order]);
+
   if (!order ) {
     return null;
   }

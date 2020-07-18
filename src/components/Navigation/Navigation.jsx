@@ -1,122 +1,126 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { selectCurrentUser } from '../../redux/user/user.selectors';
+
+import { ReactComponent as MenuIcon }  from '../../assets/menu.svg';
 import { ReactComponent as ProfileIcon }  from '../../assets/profile.svg';
+import { ReactComponent as ContactIcon }  from '../../assets/contact.svg';
+import { ReactComponent as SearchIcon }  from '../../assets/search.svg';
+
+import LinkedLogo from '../LinkedLogo/LinkedLogo';
+import DropDownBar from '../DropDownBar/DropDownBar';
 import ShopLinks from '../ShopLinks/ShopLinks';
 import ProfileLinks from '../ProfileLinks/ProfileLinks';
+import SearchBar from '../SearchBar/SearchBar';
+
+import './Navigation.scss';
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
-const Navigation = ({ currentUser, toggleShopNav }) => {
-  const getClosestTrigger =  (elem, selector) =>  {
-    for ( ; elem && elem !== document; elem = elem.parentNode ) {
-      if ( elem.matches( selector ) ) return elem;
-    }
-    return null;
-  };
+const Navigation = ({ currentUser }) => {
+  const [viewBar, setViewBar] = useState(true);
+  const [open, setOpen] = useState('search');
 
-  const getTriggerElement = (trigger) => {
-    let element = trigger;
-    if (!trigger.classList.contains('nav-trigger')) {
-      element = getClosestTrigger(trigger, '.nav-trigger');
-    }
-    return element;
-  }
-
-  const handleClick = (trigger) => {
-    const element = getTriggerElement(trigger);
-    if (element.classList.contains('trigger-enter')) {
-      handleLeave();
-      return handleEnter(element);
+  const toggleBar = (navItem) => {
+    if (open === navItem) {
+      resetBar();
     } else {
-      return handleEnter(element);
+      setViewBar(true);
+      setOpen(navItem);
     }
   }
-  
-  const handleEnter = (trigger) => {
-    const element = getTriggerElement(trigger);
-    const background = document.querySelector('.dropdown-background');
-    const nav = document.querySelector('.site-header');
-    background.classList.add('open');
-    element.classList.add('trigger-enter');
-    setTimeout(() => element.classList.add('trigger-enter-active'), 150);
-    const dropdown = element.querySelector('.dropdown-links');
-    const dropdownCoords = dropdown.getBoundingClientRect();
-    const navCoords = nav.getBoundingClientRect();
-    const coords = {
-      height: dropdownCoords.height,
-      width: dropdownCoords.width,
-      top: dropdownCoords.top - navCoords.top,
-      left: dropdownCoords.left - navCoords.left
-    };
 
-    background.style.setProperty('height', `${coords.height}px`);
-    background.style.setProperty('width', `${coords.width}px`);
-    background.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
+  const resetBar = () => {
+    setViewBar(false);
+    setOpen('');
   }
 
-  const handleLeave = () => {
-    const openDropdown = document.querySelector('.trigger-enter');
-    if (!openDropdown) {
-      return
+  const renderBar = () => {
+    if (!viewBar || !open) {
+      return null
     }
-    const background = document.querySelector('.dropdown-background');
-    openDropdown.classList.remove('trigger-enter', 'trigger-enter-active');
-    background.classList.remove('open');
+
+    return  (
+      <DropDownBar>
+        {renderSwitch(open)}
+      </DropDownBar>
+    )
+  }
+
+  const renderSwitch = (open) =>  {
+    switch(open) {
+      case 'shop':
+        return <ShopLinks 
+          handleClick={() => setViewBar(false)}
+        />;
+      case 'profile':    
+        return <ProfileLinks 
+          handleClick={() => setViewBar(false)}
+        />;
+      case 'search':    
+        return <SearchBar 
+          handleClick={() => setViewBar(false)}
+        />;
+      default:
+      return null
+    }
   }
 
   return (
     <React.Fragment>
-      <div className='dropdown-background'>
-        <span className='arrow'></span>
-      </div>
-      <nav className='nav'>        
+      <LinkedLogo 
+        handleClick={resetBar}
+      />
+      <nav className='nav'>
         <ul className='nav-list'>
           <li 
-            className='nav-trigger'
-            onClick={(e) => handleClick(e.target)}
-            onMouseEnter={(e) => handleEnter(e.target)}
-            onMouseLeave={() => handleLeave()}
+            className='nav-option nav-icon pointer'
+            aria-label='shop'
+            onClick={() => toggleBar('shop')}
           >
-            Shop
-            <div className='dropdown-links'>
-              <ShopLinks 
-                handleLeave={handleLeave}
-              />
-            </div>
+            <MenuIcon className='menu-icon' />
           </li>
-          <li className='nav-option'>
-            <Link to={`${PUBLIC_URL}/contact`}>
-              Contact
+          <ShopLinks handleClick={resetBar} />
+          <li 
+            className='nav-option nav-icon pointer'
+            aria-label='search'
+            onClick={() => toggleBar('search')}
+          >
+            <SearchIcon className='menu-icon' />
+          </li>
+          <li 
+            className='nav-option nav-icon pointer'>
+            <Link 
+              aria-label='contact'
+              to={`${PUBLIC_URL}/contact`}
+              onClick={resetBar}>
+              <ContactIcon className='menu-icon' />
             </Link>
-          </li>        
+          </li> 
           {
             currentUser ?
             <li 
-              className='nav-trigger'
-              onClick={(e) => handleClick(e.target)}
-              onMouseEnter={(e) => handleEnter(e.target)}
-              onMouseLeave={() => handleLeave()}
+              className='nav-option nav-icon pointer'
+              onClick={() => toggleBar('profile')}
             >
-              <ProfileIcon className='profile-icon' />              
-              <div className='dropdown-links'>
-                <ProfileLinks 
-                  handleLeave={handleLeave}
-                />
-              </div>
+              <ProfileIcon className='menu-icon' />
             </li>
             :
-            <li className='nav-option'>
-              <Link to={`${PUBLIC_URL}/signin`}>
-                Sign In
+            <li className='nav-option nav-icon pointer'>
+              <Link 
+                aria-label='sign in'
+                to={`${PUBLIC_URL}/signin`}
+                onClick={resetBar}>
+                <ProfileIcon className='menu-icon' />
               </Link>
             </li>
           }
         </ul>
       </nav>
+      { renderBar() }
     </React.Fragment>      
   );
 };

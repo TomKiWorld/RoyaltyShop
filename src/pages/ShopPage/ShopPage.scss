@@ -1,21 +1,14 @@
 // Shop page styles
 @import '../../styles/config.scss';
-@import '../../styles/collection-item.scss';
 
 .shop-page {
   .collections-overview {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .back-link {
-    cursor: pointer;
+    @include flexCol();
   }
 
   .collection-preview {
-    display: flex;
-    flex-direction: column;
     margin-bottom: 1rem;
+    @include flexCol();
   
     .collection-title {
       color: $sub-color;
@@ -27,21 +20,20 @@
 
       &:hover,
       &:focus {
-        cursor: pointer;
         transform: scale(1.1);
       }
 
       span {
+        color: $main-color;
         display: block;
-        font-size: $small-font;
+        font-size: $smaller-font;
         margin-bottom: 0.5rem;
       }
     }
 
     .title-underline {
-      width: 8rem;
-      height: 2rem;
       margin: -0.5rem auto 1rem;
+      @include size(8rem, 2rem);
 
       g {
         fill: $sub-color;
@@ -49,9 +41,8 @@
     }
   
     .preview {
-      display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      @include flexSpBetween();
 
       @media screen and (min-width: 48rem) {
         flex-wrap: nowrap;

@@ -7,7 +7,7 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 const MenuItem = ({ imageUrl, title, size, history, linkUrl }) => (
   <div 
     role='link'
-    className={`${ size ? size : '' } menu-item`}
+    className={`${ size ? size : '' } menu-item pointer`}
     onClick={() => history.push(`${PUBLIC_URL}/${linkUrl}`)}>
     <div
       className='background-image'

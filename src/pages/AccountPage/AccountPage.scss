@@ -1,31 +1,23 @@
 @import '../../styles/config.scss';
-@import '../../styles/collection-item.scss';
 @import '../../styles/table.scss';
-@import '../../styles/order-details.scss';
 
 .account-page {
   .header-banner {
     height: 40vh;
-    display: flex;
-    align-items: center;
+    @include flexAlCenter();
   }
 
   .account-welcome {
-    width: 11rem;
-    height: 11rem;
     background-color: rgba(255, 255, 255, 0.6);
     transform: rotate(45deg);
     margin: 0 5rem 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     outline: 1rem solid rgba(255, 255, 255, 0.6);
     outline-offset: 1rem;
+    @include flexColAlJuCenter();
+    @include size(11rem);
 
-    @media screen and (min-width: 31rem) { 
-      position: absolute;
-      right: 20%
+    @media screen and (min-width: 31rem) {
+      @include absoluteRightPosition(auto, 20%);
     }
 
     &-background {
@@ -40,17 +32,15 @@
 
   &-cta {
     margin: 1rem auto;
-    display: flex;
-    justify-content: space-around;
+    @include flexSpAround();
   }
 
   &-display {
-    width: 100%;
-    height: 50vh;
     overflow-y: scroll;
     overflow-x: hidden;
     position: relative;
     box-shadow: 0 3rem 6rem rgba(128,128,128,.1), 0 1rem 2rem rgba(128,128,128,.15), 0 0.3rem 1rem rgba(0,0,0,.1);
+    @include size(100%, 50vh);
 
     @media screen and (min-width: 48rem) {
       height: 80vh;
@@ -68,9 +58,8 @@
   .orders-container {
     width: 200%;
     display: flex;
-    position: absolute;
-    top: 0;
     transition:left 0.5s ease-out;
+    @include absoluteLeftPosition(0, auto);
 
     .orders-overview,
     .order-details-container {
@@ -78,34 +67,18 @@
     }
   }
 
-  .order-details-container .back-link {
+  .order-details-container .pointer {
     padding-left: 0.5rem;
   }
 
   .wish-list {
-    max-width: 75rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
-    margin-top: 1rem;
-
-    & .collection-item {
-      width: 100%;
-      margin-bottom: 1.5rem;
-    }
-
-    @media screen and (min-width: 48rem) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
+    @include gridTwoFour();
   }
 }
 
 .temp-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100%;
+  @include flexColAlJuCenter();
 }
 
 .empty-title {

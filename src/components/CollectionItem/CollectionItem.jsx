@@ -9,6 +9,8 @@ import { selectWishListItems } from '../../redux/wishlist/wishlist.selectors';
 
 import { ReactComponent as Heart } from '../../assets/heart.svg';
 
+import './CollectionItem.scss';
+
 const CollectionItem = ({ item, addItem, toggleItem, wishListItems }) => {
   const { imageUrl, name, price, id } = item;
   const isFavorite = (wishListItems.filter(wishListItem => wishListItem.id === id ).length) > 0;
@@ -24,7 +26,7 @@ const CollectionItem = ({ item, addItem, toggleItem, wishListItems }) => {
       />
       <Heart 
         onClick={() => toggleItem(item)}
-        className='wish-list-icon'
+        className='wish-list-icon pointer'
         fill={ isFavorite ? 'black' : 'white'}
         stroke={ isFavorite ? 'white' : 'black'}
         />

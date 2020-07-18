@@ -34,11 +34,9 @@
     color: $sub-color;
     font-size: $normal-font;
     font-weight: normal;
-    position: absolute;
     pointer-events: none;
-    left: 0.25rem;
-    top: 0.5rem;
     transition: 300ms ease all;
+    @include absoluteLeftPosition(0.5rem, 0.25rem);
 
     &.shrink {
       @include shrinkLabel();

@@ -10,7 +10,7 @@ const FilterButton = ({ title, collectionsFilter, setCollectionFilter }) => {
 
   return (
     <button 
-      className={`search-filter-button${active ? ' active' : ''}`}
+      className={`search-filter-button pointer${active ? ' active' : ''}`}
       onClick={(() => {
         setActive(!active);
         setCollectionFilter(title, collectionsFilter);

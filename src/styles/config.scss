@@ -33,12 +33,161 @@ $border-style: 0.05rem solid $main-color;
   text-align: center;
 }
 
-@mixin flexColCenter {
+// Size
+@mixin size($size, $height: false) {
+  width: $size;
+
+  @if $height {
+    height: $height
+  } @else {
+    height: $size;
+  }
+}
+
+// Position
+@mixin fixedPosition($top: false, $left: false) {
+  position: fixed;
+
+  @if $top {
+    top: $top
+  } @else {
+    top: 0;
+  }
+
+  @if $left {
+    left: $left
+  } @else {
+    left: 0;
+  }
+}
+
+// Position
+@mixin fixedPosition($top: false, $left: false) {
+  position: fixed;
+
+  @if $top {
+    top: $top
+  } @else {
+    top: 0;
+  }
+
+  @if $left {
+    left: $left
+  } @else {
+    left: 0;
+  }
+}
+
+@mixin absoluteLeftPosition($top: false, $left: false) {
+  position: absolute;
+
+  @if $top {
+    top: $top
+  } @else {
+    top: 0;
+  }
+
+  @if $left {
+    left: $left
+  } @else {
+    left: 0;
+  }
+}
+
+@mixin absoluteRightPosition($top: false, $right: false) {
+  position: absolute;
+
+  @if $top {
+    top: $top
+  } @else {
+    top: 0;
+  }
+
+  @if $right {
+    right: $right
+  } @else {
+    right: 0;
+  }
+}
+
+// Flex
+@mixin flexColAlCenter {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+@mixin flexColAlJuCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexAlJuCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexColJuCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin flexJuCenter {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flexSpAround {
+  display: flex;
+  justify-content: space-around;
+}
+
+@mixin flexSpBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flexAlCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+// Grid
+@mixin gridTwoFour {
+  max-width: 75rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  margin-top: 1rem;
+
+  @media screen and (min-width: 48rem) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  
+  & > div {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+// Background images
+@mixin BgCoverCenter {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: $sub-color;
+}
+
+// Drop down
 @mixin dropDown {
   position: absolute;
   display: flex;
