@@ -1,14 +1,19 @@
 import { takeLatest, put, all, call, select } from 'redux-saga/effects';
 
-import { selectItems, selectSearchField, selectCollectionsFilter } from './search.selectors';
+import { selectItems, selectSearchField, selectCollectionsFilter, selectFilteredItems } from './search.selectors';
 import { setFilteredItems } from './search.actions';
 import { filterItems } from './search.utils';
 import shopActionTypes from '../shop/shop.types';
 import searchActionTypes from './search.types';
 
-export function* addAllItems() {
+export function* setItems() {
   const items = yield select(selectItems);
-  yield put(setFilteredItems(items))
+  const filteredItems = yield select(selectFilteredItems);
+  if (filteredItems.length > 0) {
+    yield put(setFilteredItems(filteredItems))
+  } else {
+    yield put(setFilteredItems(items))
+  }
 }
 
 export function* setFilteredItemsAfterChange() {
@@ -27,7 +32,7 @@ export function* onFilterChange() {
 }
 
 export function* onRequestCollectionSuccess() {
-  yield takeLatest(shopActionTypes.REQUEST_COLLECTIONS_SUCCESS, addAllItems)
+  yield takeLatest(shopActionTypes.REQUEST_COLLECTIONS_SUCCESS, setItems)
 }
 
 export function* searchSagas() {

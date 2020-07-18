@@ -35,7 +35,7 @@ const CollectionPage = ({ collection, section, history }) => {
     </HeaderBanner>
     <p 
       role='link'
-      className='container back-link' 
+      className='container pointer' 
       onClick={() => history.push(`${PUBLIC_URL}/shop`)}>
       &#10594; Back to Collections</p>
     <div className='collection-items container'>

@@ -1,9 +1,10 @@
+@import '../../styles/config.scss';
+
 .site-footer {
   background-color: $background-color-lighter;
   padding: 1rem;
   margin-top: 2rem;
-
-  @include flexColCenter();
+  @include flexColAlCenter();
 
   .tomki-link {
     font-weight: bold;
@@ -12,8 +13,7 @@
   .footer {
     &-nav {
       width: 100%;
-      display: flex;
-      justify-content: space-around;
+      @include flexSpAround();
 
       @media screen and (min-width: 31rem) {
         font-size: 1rem;
@@ -25,15 +25,14 @@
 
       .nav-option {
         text-transform: capitalize;
-        width: fit-content;
       }
-    } 
+    }
+    
     &-section {
-      display: flex;
-      flex-direction: column;
-      width: 30%;
+      width: 33%;
       padding: 1rem;
       border-right: 0.05rem solid $sub-color;
+      @include flexCol();
 
       &:last-of-type {
         border-right: 0;
@@ -42,6 +41,10 @@
       .logo-container {
         transform: none;
         padding-left: 1rem;
+      }
+
+      .shop-links {
+        @include flexCol();
       }
     }
   }

@@ -1,0 +1,128 @@
+@import '../../styles/config.scss';
+
+.nav {
+  flex-grow: 2;
+  justify-content: flex-end;
+  position: relative;
+  @include flexAlCenter();
+  @include size(50%, 100%);
+
+  &-list {
+    list-style: none;
+    padding: 0;
+    @include flexAlCenter();
+  }
+
+  &-option {
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    transition: transform 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      transform: scale(1.1);
+    }
+  }
+
+  &-icon {
+    padding: 0.5rem;
+  }
+
+  .menu-icon {
+    margin: 0 0.5rem;
+    @include size(1rem, 100%);
+  }
+
+  .shop-links {
+    display: none;
+  }
+
+  @media screen and (min-width: 51rem) {
+    .shop-links {
+      display: block;
+    }
+
+
+    [aria-label='shop'] {
+      display: none;
+    }
+  }
+}
+
+.sign-out {
+  transition: transform 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    transform: scale(1.1);
+  }
+}
+
+.drop-down-bar {
+  .nav-option {
+    color: $base-color;
+    background-color: $main-color;
+    font-size: $small-font;
+    text-align: center;
+    border: 0.05rem solid $base-color;
+    width: 30%;
+    margin: 1%;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  .nav-title {
+    order: 2;
+  }
+
+  .shop-links {
+    flex-wrap: wrap;
+    @include flexSpAround();
+
+    .nav-title {
+      order: 0;
+    }
+
+    @media screen and (min-width: 51rem) {
+      display: none;
+    }
+  }
+
+  .search-nav {
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &-label {
+      color: white;
+      margin-right: 0.5rem;
+      letter-spacing: 0.1rem;
+    }
+
+    &-input {
+      border: $border-style;
+      line-height: 1.2rem;
+      margin-right: 0.5rem;
+    }
+
+    &-button {
+      font-family: 'Open Sans Condensed';
+      text-transform: uppercase;
+      color: $base-color;
+      background-color: $main-color;
+      letter-spacing: 0.1rem;
+      border: 0.05rem solid $base-color;
+
+      &:hover,
+      &:focus {
+        color: $main-color;
+        background-color: $base-color;
+        border: $border-style;
+      }
+    }
+  }
+}

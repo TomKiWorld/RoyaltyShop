@@ -1,14 +1,13 @@
 @import '../../styles/config.scss';
 
 .expending-title {
-  position: absolute;
   width: 100%;
-  top: 30%;
   text-align: center;
   color: $gold-color;
   text-shadow: 0.1rem 0.1rem $main-color;
   z-index: 5;
   font-size: $title-font;
+  @include absoluteLeftPosition(30%, auto);
 
   h2 {
     letter-spacing: 0;

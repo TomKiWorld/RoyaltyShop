@@ -3,13 +3,10 @@
 @import '../../styles//form-group.scss';
 
 .login-page {
-  display: flex;
-  flex-direction: column;
+  @include flexCol();
 
   .login-content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    @include flexColJuCenter();
 
     @media screen and (min-width: 48rem) {
       flex-direction: row;
@@ -27,10 +24,9 @@
 
   .sign-in, 
   .register {
-    display: flex;
-    flex-direction: column;
     margin: 0 auto;
     width: 20rem;
+    @include flexCol();
   }
 
   .register {
@@ -39,8 +35,7 @@
 
   .sign-in {
     .buttons {
-      display: flex;
-      justify-content: space-between;
+      @include flexSpBetween();
     }
 
     .cta-button:nth-of-type(2) {

@@ -7,10 +7,11 @@ import { selectDirectorySections } from '../../redux/directory/directory.selecto
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
-const ShopLinks = ({ sections }) => (
-  <React.Fragment>
+const ShopLinks = ({ sections, handleClick }) => (
+  <div className='shop-links'>
     <Link 
-      className='nav-title nav-option' 
+      className='nav-title nav-option pointer'
+      onClick={handleClick ? handleClick : null}
       to={`${PUBLIC_URL}/shop`}>
       Collections
     </Link>
@@ -18,13 +19,14 @@ const ShopLinks = ({ sections }) => (
       sections.map(({ id, title, linkUrl }) => (
         <Link 
           key={id} 
-          className='nav-option' 
+          className='nav-option pointer' 
+          onClick={handleClick ? handleClick : null}
           to={`${PUBLIC_URL}/${linkUrl}`}>
             { title }
         </Link>
       ))
     }
-  </React.Fragment>
+  </div>
 );
 
 const mapStateToProps = createStructuredSelector({

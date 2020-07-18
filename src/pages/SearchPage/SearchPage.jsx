@@ -26,7 +26,7 @@ const SearchPage = ({ fetchCollectionsStart, setSearchField, searchField, sectio
 
   useEffect(() => {
     setOrderedItems(filteredItems);
-  }, [filteredItems])
+  }, [filteredItems]);
 
   useEffect(() => {
     const getOrderedArray = value => {
@@ -45,7 +45,7 @@ const SearchPage = ({ fetchCollectionsStart, setSearchField, searchField, sectio
     }
     const newArray = getOrderedArray(orderBy);
     setOrderedItems([...newArray]);
-  }, [orderBy, filteredItems])
+  }, [orderBy, filteredItems]);
   
   return (
     <section className='search-page'>
@@ -84,6 +84,7 @@ const SearchPage = ({ fetchCollectionsStart, setSearchField, searchField, sectio
               </label>
             </h2>
             <select 
+              className='pointer'
               onChange={(e) => setOrderBy(e.target.value)}
               name='orderby' 
               id='orderby'>

@@ -2,14 +2,12 @@
 
 .faq {
   &-section {
-    display: flex;
-    flex-direction: column;
+    @include flexColAlCenter();
   }
 
   &-accordion {
     width: 80%;
     max-width: 48rem;
-    margin: 1rem auto;
   }
 
   &-question {

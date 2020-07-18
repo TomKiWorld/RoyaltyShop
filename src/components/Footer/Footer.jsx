@@ -9,6 +9,8 @@ import LinkedLogo from '../LinkedLogo/LinkedLogo';
 import ShopLinks from '../ShopLinks/ShopLinks';
 import ProfileLinks from '../ProfileLinks/ProfileLinks';
 
+import './Footer.scss';
+
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
 const Footer = ({ currentUser }) => {
@@ -17,10 +19,10 @@ const Footer = ({ currentUser }) => {
       <div className='footer-nav'>
         <div className='footer-section'>
           <LinkedLogo />
-          <Link className='nav-option' to={PUBLIC_URL}>
+          <Link className='nav-option pointer' to={PUBLIC_URL}>
             Home
           </Link>
-          <Link className='nav-option' to={`${PUBLIC_URL}/contact`}>
+          <Link className='nav-option pointer' to={`${PUBLIC_URL}/contact`}>
             Contact
           </Link>
         </div>
@@ -32,7 +34,7 @@ const Footer = ({ currentUser }) => {
               currentUser ?
               <ProfileLinks currentUser={ currentUser } />
               :
-              <Link className='nav-option' to={`${PUBLIC_URL}/signin`}>
+              <Link className='nav-option pointer' to={`${PUBLIC_URL}/signin`}>
                 Sign In
               </Link>
             }

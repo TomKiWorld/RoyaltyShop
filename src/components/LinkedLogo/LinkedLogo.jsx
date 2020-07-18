@@ -4,9 +4,12 @@ import { ReactComponent as RoyaltyLogo } from '../../assets/royalty-logo.svg';
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
-const LinkedLogo = () => {
+const LinkedLogo = ({ handleClick }) => {
   return (
-    <Link className='logo-container' to={PUBLIC_URL} aria-label='Home page' >
+    <Link 
+      className='logo-container' 
+      onClick={handleClick ? handleClick : null}
+      to={PUBLIC_URL} aria-label='Home page' >
       <RoyaltyLogo className='logo' />
     </Link>
   );
