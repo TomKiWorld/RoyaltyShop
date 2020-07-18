@@ -66,3 +66,12 @@
 .pointer {
   cursor: pointer;
 }
+
+.error-message {
+  position: relative;
+  color: $base-color;
+  width: 90%;
+  max-width: 48rem;
+  text-align: center;
+  line-height: 2rem;
+}

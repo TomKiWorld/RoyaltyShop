@@ -5,14 +5,24 @@ import { withRouter } from 'react-router-dom';
 
 import StripeCheckout from 'react-stripe-checkout';
 import Preloader from '../Preloader/Preloader';
+import DropDownBar from '../DropDownBar/DropDownBar';
 
 import { updateOrderInFirebase } from '../../redux/orders/orders.actions';
 
 
 const StripeCheckoutButton = ({ price, updateOrderInFirebase, setDropdown }) => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
+  const [viewErr, setViewErr] = useState(false);
   const priceForStripe = price * 100;
   const publishableKey = process.env.REACT_APP_STRIPE_API;
+
+  const errorTimer = () => {
+    setTimeout(() => {
+      setViewErr(false);
+      setLoading(false);
+    }, 8000);
+  };
+
   const onToken = token => {
     setLoading(true);
     axios({
@@ -30,8 +40,23 @@ const StripeCheckoutButton = ({ price, updateOrderInFirebase, setDropdown }) => 
     })
     .catch(error => {
       console.log('Payment error: ', error)
-      alert('There was an issue with your payment! Please make sure you use the provided credit card.');
+      setViewErr(true);
+      errorTimer();
     });
+  };
+
+  const renderError = () => {
+    if (!viewErr) {
+      return null
+    }
+
+    return  (
+      <DropDownBar>
+        <div className='error-message'>
+          <p>There was an issue with your payment! Please make sure you use the provided credit card.</p>
+        </div>
+      </DropDownBar>
+    );
   };
 
   return (
@@ -49,6 +74,7 @@ const StripeCheckoutButton = ({ price, updateOrderInFirebase, setDropdown }) => 
       token={onToken}
       stripeKey={publishableKey}
     />
+    { renderError() }
     </React.Fragment>
   )
 };

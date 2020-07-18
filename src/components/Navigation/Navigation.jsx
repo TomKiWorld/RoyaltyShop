@@ -21,7 +21,7 @@ import './Navigation.scss';
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
 const Navigation = ({ currentUser }) => {
-  const [viewBar, setViewBar] = useState(true);
+  const [viewBar, setViewBar] = useState(false);
   const [open, setOpen] = useState('search');
 
   const toggleBar = (navItem) => {
