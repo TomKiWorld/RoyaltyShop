@@ -17,10 +17,6 @@ const SearchPage = ({ fetchCollectionsStart, setSearchField, searchField, sectio
   const [orderedItems, setOrderedItems] = useState(filteredItems);
   const [orderBy, setOrderBy] = useState('name-a-z');
   useEffect(() => {
-    fetchCollectionsStart();
-  }, [fetchCollectionsStart]);
-
-  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 

@@ -15,6 +15,7 @@ import {
   createUserProfileDocument, 
   getCureentUser 
 } from '../../firebase/firebase.utils';
+import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 
 export function* getSnapShotFromUserAuth(userAuth, additionalData) {
   try {
@@ -24,6 +25,7 @@ export function* getSnapShotFromUserAuth(userAuth, additionalData) {
   } catch(error) {
     yield put(signInFailure(error));
   }
+  yield put(fetchCollectionsStart())
 }
 
 export function* signInWithGoogle() {
