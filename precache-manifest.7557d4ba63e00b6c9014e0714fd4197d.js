@@ -1,111 +1,111 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3fad77ada795d0b4f74aa857401d064b",
+    "revision": "0ac58251c18f7c844506e789e84f1e0a",
     "url": "/RoyaltyShop/index.html"
   },
   {
-    "revision": "bf57bd6c034a9b5076dd",
+    "revision": "b8b6ca83cdb5d141cfda",
     "url": "/RoyaltyShop/static/css/10.75c6de8b.chunk.css"
   },
   {
-    "revision": "8cc88b179f18ac069394",
+    "revision": "bdd8143fb7cfc4acb843",
     "url": "/RoyaltyShop/static/css/11.5c452fa2.chunk.css"
   },
   {
-    "revision": "1dc496691c234bc8e493",
+    "revision": "8e0c27c617c98d29fc26",
     "url": "/RoyaltyShop/static/css/12.d39207f6.chunk.css"
   },
   {
-    "revision": "8580e21686c85b2b3c27",
+    "revision": "13e1b13703cc17cf6eb4",
     "url": "/RoyaltyShop/static/css/4.bc80704e.chunk.css"
   },
   {
-    "revision": "6548540b29c4e2fa166b",
+    "revision": "eda1bd5c9dd9562caad6",
     "url": "/RoyaltyShop/static/css/5.5da6850c.chunk.css"
   },
   {
-    "revision": "27b4a96c594208064d38",
+    "revision": "b1ca480692c0fb6d6fb2",
     "url": "/RoyaltyShop/static/css/6.5a6f5bcb.chunk.css"
   },
   {
-    "revision": "bc29db433df06946b8f8",
+    "revision": "87dcdb89a60cfd5a3c5f",
     "url": "/RoyaltyShop/static/css/7.9b195d47.chunk.css"
   },
   {
-    "revision": "23adfbd0a740d5145b08",
+    "revision": "11fcd6e2a1e037d12ad6",
     "url": "/RoyaltyShop/static/css/8.f74eb9ed.chunk.css"
   },
   {
-    "revision": "3d1e5789179d61110306",
+    "revision": "b9f29e71deabaa99dfc6",
     "url": "/RoyaltyShop/static/css/9.7a42c6d4.chunk.css"
   },
   {
-    "revision": "a2ed6d153fc2b21a282d",
+    "revision": "3347c4face8a753db42a",
     "url": "/RoyaltyShop/static/css/main.84ec33e6.chunk.css"
   },
   {
-    "revision": "bf57bd6c034a9b5076dd",
-    "url": "/RoyaltyShop/static/js/10.4cdc57ea.chunk.js"
+    "revision": "b8b6ca83cdb5d141cfda",
+    "url": "/RoyaltyShop/static/js/10.acac65a1.chunk.js"
   },
   {
-    "revision": "8cc88b179f18ac069394",
-    "url": "/RoyaltyShop/static/js/11.94b5a385.chunk.js"
+    "revision": "bdd8143fb7cfc4acb843",
+    "url": "/RoyaltyShop/static/js/11.088eeed4.chunk.js"
   },
   {
-    "revision": "1dc496691c234bc8e493",
-    "url": "/RoyaltyShop/static/js/12.1c618621.chunk.js"
+    "revision": "8e0c27c617c98d29fc26",
+    "url": "/RoyaltyShop/static/js/12.5eca52d0.chunk.js"
   },
   {
-    "revision": "1e2ca693ceec1a040ccd",
-    "url": "/RoyaltyShop/static/js/13.52cf3ac8.chunk.js"
+    "revision": "e57411725b62f6153e8e",
+    "url": "/RoyaltyShop/static/js/13.da56a297.chunk.js"
   },
   {
-    "revision": "f0187b481b298267e072",
-    "url": "/RoyaltyShop/static/js/14.954e3aaf.chunk.js"
+    "revision": "39019264be7bbeb1edbc",
+    "url": "/RoyaltyShop/static/js/14.0556abd5.chunk.js"
   },
   {
-    "revision": "3ddadce5cce0e58e058e",
-    "url": "/RoyaltyShop/static/js/2.d55a508a.chunk.js"
+    "revision": "d0923cd73e98f06ff4e7",
+    "url": "/RoyaltyShop/static/js/2.e011cf18.chunk.js"
   },
   {
     "revision": "0135287500bd9d64203d07b4f33f971f",
-    "url": "/RoyaltyShop/static/js/2.d55a508a.chunk.js.LICENSE.txt"
+    "url": "/RoyaltyShop/static/js/2.e011cf18.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6e650ea44be8d0f8e7dc",
-    "url": "/RoyaltyShop/static/js/3.ecd80c5b.chunk.js"
+    "revision": "a2a5c6805954bcfd876b",
+    "url": "/RoyaltyShop/static/js/3.397bf201.chunk.js"
   },
   {
-    "revision": "8580e21686c85b2b3c27",
-    "url": "/RoyaltyShop/static/js/4.ef6b95c8.chunk.js"
+    "revision": "13e1b13703cc17cf6eb4",
+    "url": "/RoyaltyShop/static/js/4.72582e0d.chunk.js"
   },
   {
-    "revision": "6548540b29c4e2fa166b",
-    "url": "/RoyaltyShop/static/js/5.ad9e2165.chunk.js"
+    "revision": "eda1bd5c9dd9562caad6",
+    "url": "/RoyaltyShop/static/js/5.9790bf3c.chunk.js"
   },
   {
-    "revision": "27b4a96c594208064d38",
-    "url": "/RoyaltyShop/static/js/6.a51ca6d4.chunk.js"
+    "revision": "b1ca480692c0fb6d6fb2",
+    "url": "/RoyaltyShop/static/js/6.9a4342fb.chunk.js"
   },
   {
-    "revision": "bc29db433df06946b8f8",
-    "url": "/RoyaltyShop/static/js/7.2b17d9d6.chunk.js"
+    "revision": "87dcdb89a60cfd5a3c5f",
+    "url": "/RoyaltyShop/static/js/7.7ebad70c.chunk.js"
   },
   {
-    "revision": "23adfbd0a740d5145b08",
-    "url": "/RoyaltyShop/static/js/8.411a31dc.chunk.js"
+    "revision": "11fcd6e2a1e037d12ad6",
+    "url": "/RoyaltyShop/static/js/8.75d7ff1d.chunk.js"
   },
   {
-    "revision": "3d1e5789179d61110306",
-    "url": "/RoyaltyShop/static/js/9.cc1482d4.chunk.js"
+    "revision": "b9f29e71deabaa99dfc6",
+    "url": "/RoyaltyShop/static/js/9.e2c3d89f.chunk.js"
   },
   {
-    "revision": "a2ed6d153fc2b21a282d",
-    "url": "/RoyaltyShop/static/js/main.8b592cb2.chunk.js"
+    "revision": "3347c4face8a753db42a",
+    "url": "/RoyaltyShop/static/js/main.e45bc57e.chunk.js"
   },
   {
-    "revision": "3e7918528e4ec31496bc",
-    "url": "/RoyaltyShop/static/js/runtime-main.9a8493ab.js"
+    "revision": "b94ef33c686c29e0b0c4",
+    "url": "/RoyaltyShop/static/js/runtime-main.e8b735f8.js"
   },
   {
     "revision": "e4e95726e0455487c683e10e8ec0a654",
