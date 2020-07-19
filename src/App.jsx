@@ -10,6 +10,7 @@ import SuspenseLoad from './components/SuspenseLoad/SuspenseLoad';
 
 import { checkUserSession } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
+import { fetchCollectionsStart } from './redux/shop/shop.actions';
 
 import './App.scss';
 
@@ -30,8 +31,9 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { checkUserSession } = this.props;
+    const { checkUserSession, fetchCollectionsStart } = this.props;
     checkUserSession();
+    fetchCollectionsStart();
   }
 
   componentWillUnmount() {
@@ -72,7 +74,8 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = dispatch => ({
-  checkUserSession: () => dispatch(checkUserSession())
+  checkUserSession: () => dispatch(checkUserSession()),
+  fetchCollectionsStart: () => dispatch(fetchCollectionsStart())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

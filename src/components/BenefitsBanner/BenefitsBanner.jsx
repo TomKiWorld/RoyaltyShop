@@ -12,7 +12,7 @@ const BenefitsBanner = () => {
       </div>
       <div className='benefits-banner-box'>
         <RoyaltyLogo className='logo' />
-        <h3 className='benefits-banner-title'><span>Quick</span> Delievry</h3>
+        <h3 className='benefits-banner-title'><span>Quick</span> Delivery</h3>
       </div>
       <div className='benefits-banner-box'>
         <RoyaltyLogo className='logo' />

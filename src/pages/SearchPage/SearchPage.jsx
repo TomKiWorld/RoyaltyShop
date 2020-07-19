@@ -6,14 +6,13 @@ import HeaderBanner from '../../components/HeaderBanner/HeaderBanner';
 import FilterButton from '../../components/FilterButton/FilterButton';
 import ItemsList from '../../components/ItemsList/ItemsList';
 
-import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 import { setSearchField } from '../../redux/search/search.actions';
 import { selectSearchField, selectFilteredItems } from '../../redux/search/search.selectors';
 import { selectDirectorySections } from '../../redux/directory/directory.selectors';
 
 import './SearchPage.scss';
 
-const SearchPage = ({ fetchCollectionsStart, setSearchField, searchField, sections, filteredItems }) => {
+const SearchPage = ({ setSearchField, searchField, sections, filteredItems }) => {
   const [orderedItems, setOrderedItems] = useState(filteredItems);
   const [orderBy, setOrderBy] = useState('name-a-z');
   useEffect(() => {
@@ -106,7 +105,6 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
   setSearchField: text => dispatch(setSearchField(text))
 });
 
