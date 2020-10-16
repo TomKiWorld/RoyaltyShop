@@ -11,7 +11,9 @@ import { selectCartHidden } from '../../redux/cart/cart.selectors';
 const Header = ({ hideCart }) => {
   return (
     <header className='main-nav'>
-      <div className='site-header container'>
+      <div 
+        className='site-header container'
+        aria-label='site-header'>
         <Navigation />
         <CartIcon />
       </div>

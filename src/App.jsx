@@ -28,41 +28,35 @@ const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
 class App extends React.Component {
-  unsubscribeFromAuth = null;
-
   componentDidMount() {
     const { checkUserSession, fetchCollectionsStart } = this.props;
     checkUserSession();
     fetchCollectionsStart();
   }
 
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
-
   render() {
     return (
       <React.Fragment>
         <Header />
-          <ErrorBoundry>
-            <SuspenseLoad>
-              <Switch>
-                <Route exact path={PUBLIC_URL} component={HomePage} />
-                <Route path={`${PUBLIC_URL}/shop`} component={ShopPage} />
-                <Route exact path={`${PUBLIC_URL}/signin`} 
-                  render={()=> this.props.currentUser ? 
-                    <Redirect to={PUBLIC_URL} /> : 
-                    <LoginPage />}/>
-                <Route exact path={`${PUBLIC_URL}/checkout`} component={CheckOutPage} />
-                <Route exact path={`${PUBLIC_URL}/account`} component={AccountPage} />
-                <Route path={[`${PUBLIC_URL}/contact`]} component={ContactPage} />
-                <Route path={[`${PUBLIC_URL}/search`]} component={SearchPage} />
-                <Route path={[`${PUBLIC_URL}/coming-soon`]} component={ComingSoonPage} />
-                <Route path={[`${PUBLIC_URL}/error`]} component={ErrorPage} />
-                <Route component={NotFoundPage}/>
-              </Switch>
-            </SuspenseLoad>
-          </ErrorBoundry>
+        <ErrorBoundry>
+          <SuspenseLoad>
+            <Switch>
+              <Route exact path={PUBLIC_URL} component={HomePage} />
+              <Route path={`${PUBLIC_URL}/shop`} component={ShopPage} />
+              <Route exact path={`${PUBLIC_URL}/signin`} 
+                render={()=> this.props.currentUser ? 
+                  <Redirect to={PUBLIC_URL} /> : 
+                  <LoginPage />}/>
+              <Route exact path={`${PUBLIC_URL}/checkout`} component={CheckOutPage} />
+              <Route exact path={`${PUBLIC_URL}/account`} component={AccountPage} />
+              <Route path={[`${PUBLIC_URL}/contact`]} component={ContactPage} />
+              <Route path={[`${PUBLIC_URL}/search`]} component={SearchPage} />
+              <Route path={[`${PUBLIC_URL}/coming-soon`]} component={ComingSoonPage} />
+              <Route path={[`${PUBLIC_URL}/error`]} component={ErrorPage} />
+              <Route component={NotFoundPage}/>
+            </Switch>
+          </SuspenseLoad>
+        </ErrorBoundry>
         <Footer />
       </React.Fragment>    
     );

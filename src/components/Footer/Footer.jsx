@@ -15,7 +15,9 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 
 const Footer = ({ currentUser }) => {
   return (
-    <footer className='site-footer'>
+    <footer 
+        className='site-footer'
+        aria-label='site-footer'>
       <div className='footer-nav'>
         <div className='footer-section'>
           <LinkedLogo />

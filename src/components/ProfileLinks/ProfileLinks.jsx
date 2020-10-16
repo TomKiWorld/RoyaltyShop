@@ -18,6 +18,7 @@ const ProfileLinks = ({ signOutStart, handleClick }) => {
   return (
     <React.Fragment>
       <Link
+        aria-label='account'
         className='nav-title nav-option pointer'
         onClick={handleClick ? handleClick : null}
         to={`${PUBLIC_URL}/account`}>
